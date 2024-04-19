@@ -1,0 +1,14 @@
+{
+    "users": [
+        {
+            "id": "admin",
+            "password": "admin1234",
+            "admin_access": true
+        },
+        {
+            "id": "user",
+            "password": "1234",
+            "admin_access": false
+        }
+    ] 
+}
