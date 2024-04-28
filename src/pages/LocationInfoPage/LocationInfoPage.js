@@ -4,8 +4,31 @@ import { useParams } from "react-router-dom";
 const LocationInfoPage = () => {
     const { id } = useParams();
 
+    const [title, setTitle] = useState("");
+    const [location, setLocation] = useState(null);
+
+    useEffect(() => {
+        fetch("http://localhost:8000/locations/" + id)
+        .then ((response) => {
+            if (response.status === 404) {
+                setTitle("Помилка 404. Здається, такої локації не існує");
+                throw new Error("404 Location not found: Invalid ID");
+            } else {
+                return response.json();
+            }
+        })
+        .then((result) => {
+            console.log(result);
+            setLocation(result);
+            setTitle(result.name);
+        })
+        .catch((err) => {
+            console.error(err);
+        })
+    }, []);
+
     return (
-        <h2>Інформація про {id}</h2>
+        <h2>{title}</h2>
     );
 }
 
