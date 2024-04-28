@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./SignupPage.css"
 import { useNavigate } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const SignupPage = () => {
     const [id, changeId] = useState("");
@@ -20,7 +21,7 @@ const SignupPage = () => {
         fetch("http://localhost:8000/users")
             .then((res) => res.json())
             .then((response) => {
-                if(response.findIndex(item => signup_user.id === item.id) === -1) {
+                if (response.findIndex(item => signup_user.id === item.id) === -1) {
                     fetch("http://localhost:8000/users", {
                         method: "POST",
                         headers: { 'content-type': 'application/json' },
@@ -40,11 +41,32 @@ const SignupPage = () => {
 
     return (
         <div className="container">
-            <form className="container" onSubmit={handleSubmit}>
-                <h1>Створити обліковий запис</h1>
-                <input required placeholder="Логін" value={id} onChange={e => changeId(e.target.value)}></input>
-                <input required placeholder="Пароль" value={password} onChange={e => changePassword(e.target.value)} type="password"></input>
-                <button type="submit">Зареєструватися</button>
+            <form className="signup-form" onSubmit={handleSubmit}>
+                <div className="card">
+                    <div className="card-header">
+                        <h2>Створити обліковий запис</h2>
+                    </div>
+                    <div className="card-body py-4 px-4">
+                        <input
+                            required
+                            className="form-control"
+                            placeholder="Логін"
+                            value={id}
+                            onChange={e => changeId(e.target.value)}>
+                        </input>
+                        <input
+                            required
+                            className="form-control mt-3"
+                            placeholder="Пароль"
+                            value={password}
+                            onChange={e => changePassword(e.target.value)}
+                            type="password">
+                        </input>
+                    </div>
+                    <div className="card-footer">
+                        <button className="btn btn-primary px-5" type="submit">Зареєструватися</button>
+                    </div>
+                </div>
             </form>
         </div>
     );
