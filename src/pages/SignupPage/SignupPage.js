@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./SignupPage.css"
 import { useNavigate } from "react-router-dom";
 
@@ -8,6 +8,10 @@ const SignupPage = () => {
     const admin_access = false;
 
     const navigate = useNavigate();
+
+    useEffect(() => {
+        sessionStorage.clear();
+    }, []);
 
     const handleSubmit = (e) => {
         e.preventDefault();
