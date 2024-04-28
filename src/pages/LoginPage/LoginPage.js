@@ -68,10 +68,18 @@ const LoginPage = () => {
                         </input>
                     </div>
                     <div className="card-footer">
-                        <button className="btn btn-primary px-5" type="submit">Вхід</button>
+                        <button className="btn btn-primary btn-lg px-5" type="submit">Вхід</button>
                     </div>
                 </div>
             </form>
+            <div className="mt-2">
+                <span className="me-2">Не маєте акаунту?</span>
+                <span>
+                    <a href="/signup">
+                        <button className="btn btn-outline-primary rounded-pill px-4 mb-1">Зареєструватися</button>
+                    </a>
+                </span>
+            </div>
         </div>
     );
 }

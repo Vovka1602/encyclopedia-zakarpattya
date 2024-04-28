@@ -64,10 +64,18 @@ const SignupPage = () => {
                         </input>
                     </div>
                     <div className="card-footer">
-                        <button className="btn btn-primary px-5" type="submit">Зареєструватися</button>
+                        <button className="btn btn-primary btn-lg px-5" type="submit">Реєстрація</button>
                     </div>
                 </div>
             </form>
+            <div className="mt-2">
+                <span className="me-2">Уже маєте акаунт?</span>
+                <span>
+                    <a href="/login">
+                        <button className="btn btn-outline-primary rounded-pill px-4 mb-1">Увійти</button>
+                    </a>
+                </span>
+            </div>
         </div>
     );
 }
