@@ -11,7 +11,9 @@ const LocationCard = ({ location }) => {
                 <h3>Ціна квитка: від {location.ticket_price} ₴</h3>
                 <h3>{location.description_short}</h3>
                 <h3>Де знаходиться: {location.location_short}</h3>
-                <button className="btn btn-primary btn-lg mt-3">Детальніше</button>
+                <a href={"/locationinfo/" + location.id}>
+                    <button className="btn btn-primary btn-lg mt-3 px-5">Детальніше</button>
+                </a>
             </div>
         </div>
     );

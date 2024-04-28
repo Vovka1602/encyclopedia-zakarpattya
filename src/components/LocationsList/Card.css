@@ -7,7 +7,7 @@
     margin-left: 40px;
     background-color: rgba(65, 75, 85, 0.339);
     backdrop-filter: blur(16px);
-    width: 70vw;
+    width: 100%;
     min-width: 800px;
     height: 350px;
     box-shadow: 0 0px 40px rgba(0, 0, 0, 0.3);
