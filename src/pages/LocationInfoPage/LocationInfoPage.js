@@ -25,10 +25,12 @@ const LocationInfoPage = () => {
         .catch((err) => {
             console.error(err);
         })
-    }, []);
+    }, [id]);
 
     return (
-        <h2>{title}</h2>
+        <div className="container">
+            <h2>{title}</h2>
+        </div>
     );
 }
 

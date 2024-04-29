@@ -42,7 +42,7 @@ const SignupPage = () => {
     return (
         <div className="container">
             <form className="signup-form" onSubmit={handleSubmit}>
-                <div className="card">
+                <div className="card" data-bs-theme="dark">
                     <div className="card-header">
                         <h2>Створити обліковий запис</h2>
                     </div>
