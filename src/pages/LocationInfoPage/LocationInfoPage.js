@@ -29,6 +29,7 @@ const LocationInfoPage = () => {
 
     return (
         <div className="container">
+            <title>{title}</title>
             <h2>{title}</h2>
         </div>
     );

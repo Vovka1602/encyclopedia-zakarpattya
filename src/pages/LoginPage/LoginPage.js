@@ -46,6 +46,7 @@ const LoginPage = () => {
 
     return (
         <div className="container">
+            <title>Увійти</title>
             <form className="login-form" onSubmit={loginProceed}>
                 <div className="card" data-bs-theme="dark">
                     <div className="card-header">

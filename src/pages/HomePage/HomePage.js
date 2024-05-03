@@ -25,6 +25,7 @@ const HomePage = () => {
 
     return ( 
         <div className="container">
+            <title>Головна</title>
             <h1>Головна</h1>
             <a href="/welcome">Вийти</a>
             <div>
