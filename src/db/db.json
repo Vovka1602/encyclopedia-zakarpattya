@@ -24,7 +24,7 @@
         "id": "palanok",
         "name": "Замок 'Паланок'",
         "image": "./Images/Locations/palanok_1.jpg",
-        "ticket_price": 40,
+        "ticket_price": 0,
         "location_short": "м. Мукачево",
         "description_short": "Неприступна фортеця Мукачева"
     }

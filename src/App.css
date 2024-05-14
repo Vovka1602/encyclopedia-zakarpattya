@@ -36,7 +36,9 @@
     flex-direction: column;
     margin-left: 20px;
     margin-right: 20px;
-    width: 90%;
+    padding-left: 30px;
+    padding-right: 30px;
+    width: 100%;
 }
 
 .container h1 {
@@ -51,8 +53,16 @@
     color: rgb(225, 225, 225);
 }
 
+.container h4 {
+    color: rgb(225, 225, 225);
+}
+
 form {
     display: flex;
     flex-direction: column;
     padding: 10px;
+}
+
+table {
+    width: 100%;
 }
