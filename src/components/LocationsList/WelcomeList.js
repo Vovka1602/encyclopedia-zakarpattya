@@ -1,6 +1,6 @@
-import LocationCard from "./Cards/Card";
+import WelcomeCard from "./Cards/WelcomeCard";
 
-const LocationsList = ({ data }) => {
+const WelcomeList = ({ data }) => {
     return ( 
         <table>
             <tbody>
@@ -9,7 +9,7 @@ const LocationsList = ({ data }) => {
                         <tr key={location.id}>
                             <td>
                                 <div>
-                                    <LocationCard location={location}/>
+                                    <WelcomeCard location={location}/>
                                 </div>
                             </td>
                         </tr>
@@ -20,4 +20,4 @@ const LocationsList = ({ data }) => {
     );
 }
  
-export default LocationsList;
+export default WelcomeList;

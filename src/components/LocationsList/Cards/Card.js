@@ -4,7 +4,7 @@ const LocationCard = ({ location }) => {
     return (
         <div className="card-container">
             <div className="card-image">
-                <img className="card-image" src={location.image}></img>
+                <img className="card-image" src={location.image} alt={location.name}></img>
             </div>
             <div className="card-content">
                 <h1>{location.name}</h1>
