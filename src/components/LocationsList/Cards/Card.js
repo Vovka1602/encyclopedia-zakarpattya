@@ -3,11 +3,34 @@ import "../../Buttons.css";
 import { useEffect, useState } from "react";
 
 const LocationCard = ({ location }) => {
+    const username = sessionStorage.getItem("username");
+
     const [likesNumber, setLikesNumber] = useState(0);
 
     useEffect(() => {
         setLikesNumber(location.users_liked.length);
     }, [location.users_liked.length]);
+
+    const handleLikeClick = () => {
+        let index = location.users_liked.indexOf(username);
+        if (index >= 0) {
+            location.users_liked.splice(index, 1);
+        } else {
+            location.users_liked.push(username);
+        }
+        console.log(location.users_liked);
+        fetch("http://localhost:8000/locations/" + location.id, {
+            method: "PUT",
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify(location)
+        }). then(() => {
+            if (location.users_liked.includes(username)) {
+                setLikesNumber(likesNumber + 1);
+            } else {
+                setLikesNumber(likesNumber - 1);
+            }
+        });
+    } 
 
     return (
         <div className="card-container">
@@ -35,7 +58,7 @@ const LocationCard = ({ location }) => {
                     )}
                 </div>
                 <div className="button-panel">
-                    <button className="button-red">
+                    <button className="button-red" onClick={handleLikeClick}>
                         <div className="button-content">
                             <div className="button-icon">
                                 <img src="./Images/Icons/heart_red.png" alt=""></img>
