@@ -1,32 +1,44 @@
 {
-  "users": [
-    {
-      "id": "admin",
-      "password": "admin1234",
-      "admin_access": true
-    },
-    {
-      "id": "user",
-      "password": "1234",
-      "admin_access": false
-    }
-  ],
-  "locations": [
-    {
-        "id": "uzhhorodcastle",
-        "name": "Ужгородський замок",
-        "image": "./Images/Locations/uzhhorod_castle_1.jpg",
-        "ticket_price": 50,
-        "location_short": "м. Ужгород",
-        "description_short": "Вишуканий замок у серці Ужгорода"
-    },
-    {
-        "id": "palanok",
-        "name": "Замок 'Паланок'",
-        "image": "./Images/Locations/palanok_1.jpg",
-        "ticket_price": 0,
-        "location_short": "м. Мукачево",
-        "description_short": "Неприступна фортеця Мукачева"
-    }
-  ]
+    "users": [
+        {
+            "id": "admin",
+            "password": "admin1234",
+            "admin_access": true
+        },
+        {
+            "id": "user",
+            "password": "1234",
+            "admin_access": false
+        },
+        {
+            "id": "user2",
+            "password": "12345",
+            "admin_access": false
+        }
+    ],
+    "locations": [
+        {
+            "id": "uzhhorodcastle",
+            "name": "Ужгородський замок",
+            "image": "./Images/Locations/uzhhorod_castle_1.jpg",
+            "users_liked": [
+                "admin",
+                "user"
+            ],
+            "ticket_price": 50,
+            "location_short": "м. Ужгород",
+            "description_short": "Вишуканий замок у серці Ужгорода"
+        },
+        {
+            "id": "palanok",
+            "name": "Замок 'Паланок'",
+            "image": "./Images/Locations/palanok_1.jpg",
+            "users_liked": [
+                "admin"
+            ],
+            "ticket_price": 0,
+            "location_short": "м. Мукачево",
+            "description_short": "Неприступна фортеця Мукачева"
+        }
+    ]
 }

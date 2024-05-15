@@ -1,7 +1,14 @@
 import "./Card.css";
 import "../../Buttons.css";
+import { useEffect, useState } from "react";
 
 const LocationCard = ({ location }) => {
+    const [likesNumber, setLikesNumber] = useState(0);
+
+    useEffect(() => {
+        setLikesNumber(location.users_liked.length);
+    }, [location.users_liked.length]);
+
     return (
         <div className="card-container">
             <div className="card-image">
@@ -34,6 +41,7 @@ const LocationCard = ({ location }) => {
                                 <img src="./Images/Icons/heart_red.png" alt=""></img>
                                 <img className="img-hover" src="./Images/Icons/heart_black.png" alt=""></img>
                             </div>
+                            <div className="button-label">{likesNumber}</div>
                         </div>
                     </button>
                     <a href={"/locationinfo/" + location.id}>
