@@ -2,11 +2,13 @@
     padding-top: 100px;
     position: fixed;
     display: flex;
-    width: 300px;
+    width: 320px;
     padding-left: 20px;
     min-height: 100%;
+    backdrop-filter: blur(14px);
     background-color: rgba(110, 127, 144, 0.3);
     border-right: 3px solid rgba(194, 226, 255, 0.35);
+    z-index: 9999;
 }
 
 .side-navbar {
@@ -16,17 +18,88 @@
 
 .side-navbar a {
     text-decoration: none;
-    font-size: 24px;
-    color: rgb(220, 220, 220);
-    transition: all 0.2s;
 }
 
-.side-navbar div {
+.navbar-tab {
+    width: 270px;
     background-color: rgba(255, 255, 255, 0.0);
     transition: all 0.2s;
 }
 
-.side-navbar div:hover {
+.navbar-tab span {
+    font-size: 24px;
+}
+
+.navbar-tab img {
+    width: 24px;
+    transition: all 0.2s;
+}
+
+.navbar-tab:hover {
     background-color: rgba(255, 255, 255, 0.1);
     transition: all 0.2s;
+}
+
+.navbar-tab:hover span {
+    font-size: 28px;
+    transition: all 0.2s;
+}
+
+.navbar-tab:hover img {
+    width: 28px;
+    transition: all 0.2s;
+}
+
+.navbar-tab-selected {
+    width: 270px;
+    background-color: rgba(255, 255, 255, 0.0);
+    transition: all 0.2s;
+}
+
+.navbar-tab-selected img {
+    width: 24px;
+    transition: all 0.2s;
+}
+
+.navbar-tab-selected:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: all 0.2s;
+}
+
+.navbar-tab-selected:hover img {
+    width: 24px;
+    transition: all 0.2s;
+}
+
+.sidebar-tab {
+    padding: 16px;
+    display: flex;
+    align-items: start;
+    font-weight: 400;
+    height: 100%;
+    width: 100%;
+    transition: all 0.2s;
+}
+
+.sidebar-tab a {
+    color: rgb(153, 163, 178);
+}
+
+.sidebar-tab-selected {
+    padding: 16px;
+    display: flex;
+    align-items: start;
+    font-size: 24px;
+    font-weight: 700;
+    height: 100%;
+    width: 100%;
+    transition: all 0.2s;
+}
+
+.sidebar-tab-selected a {
+    color: rgb(220, 235, 255);
+}
+
+.sidebar-tab-icon {
+    margin-bottom: 5px;
 }

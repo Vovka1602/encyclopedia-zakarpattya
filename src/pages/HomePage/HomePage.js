@@ -27,10 +27,10 @@ const HomePage = () => {
     return (
         <div className="row">
             <title>Головна</title>
-            <div className="col-2 px-0">
-                <Sidebar />
+            <div className="col-3 px-0">
+                <Sidebar page={"home"}/>
             </div>
-            <div className="col-9 px-0">
+            <div className="col px-0">
                 <div className="container">
                     <h1>Головна</h1>
                     <a href="/welcome">Вийти</a>

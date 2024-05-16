@@ -1,4 +1,5 @@
 #root {
+    width: 100vw;
     border: 0;
     padding: 0;
     margin: 0;
@@ -6,8 +7,11 @@
 
 .App {
     min-height: 100vh;
+    max-width: 101vw;
+    padding: 0px;
     background-color: rgb(25, 27, 30);
     text-align: center;
+    overflow-x: hidden;
 }
 
 .App-logo {
@@ -32,8 +36,7 @@
 .container {
     display: flex;
     flex-direction: column;
-    margin-right: 20px;
-    padding-right: 30px;
+    padding: 20px;
 }
 
 .container h1 {
@@ -59,5 +62,5 @@ form {
 }
 
 table {
-    width: 100%;
+    width: 96%;
 }
