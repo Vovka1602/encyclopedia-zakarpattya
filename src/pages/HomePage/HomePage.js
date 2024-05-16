@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import LocationsList from "../../components/LocationsList/LocationsList";
 import Sidebar from "../../components/Sidebar/Sidebar";
+import Header from "../../components/Header/Header";
+import "./HomePage.css";
 
 const HomePage = () => {
     const [data, setData] = useState(null);
@@ -30,9 +32,9 @@ const HomePage = () => {
             <div className="col-3 px-0">
                 <Sidebar page={"home"}/>
             </div>
-            <div className="col px-0">
+            <div className="col-8 px-0">
+                <Header title="Головна"/>
                 <div className="container">
-                    <h1>Головна</h1>
                     <a href="/welcome">Вийти</a>
                     <div>
                         {data && <LocationsList data={data} />}

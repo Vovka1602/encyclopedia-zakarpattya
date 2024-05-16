@@ -1,0 +1,18 @@
+.header {
+    display: flex;
+    position: fixed;
+    width: calc(100vw - 280px);
+    background-color: rgba(98, 117, 134, 0.5);
+    backdrop-filter: blur(16px);
+    border-bottom: 3px solid rgba(201, 229, 255, 0.2);
+    justify-content: center;
+    padding: 10px 25px 7px 25px;
+    z-index: 9999;
+}
+
+.header h2 {
+    text-decoration: none;
+    font-size: 36px;
+    color: rgb(225, 225, 225);
+    transition: all 0.2s;
+}
