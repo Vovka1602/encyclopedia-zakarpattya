@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import LocationsList from "../../components/LocationsList/LocationsList";
+import Sidebar from "../../components/Sidebar/Sidebar";
 
 const HomePage = () => {
     const [data, setData] = useState(null);
@@ -23,16 +24,23 @@ const HomePage = () => {
     }, []);
 
 
-    return ( 
-        <div className="container">
+    return (
+        <div className="row">
             <title>Головна</title>
-            <h1>Головна</h1>
-            <a href="/welcome">Вийти</a>
-            <div>
-                {data && <LocationsList data={data}/>}
+            <div className="col-2 px-0">
+                <Sidebar />
+            </div>
+            <div className="col-9 px-0">
+                <div className="container">
+                    <h1>Головна</h1>
+                    <a href="/welcome">Вийти</a>
+                    <div>
+                        {data && <LocationsList data={data} />}
+                    </div>
+                </div>
             </div>
         </div>
     );
 }
- 
+
 export default HomePage;

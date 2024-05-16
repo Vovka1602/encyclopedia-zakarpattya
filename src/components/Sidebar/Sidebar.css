@@ -1,0 +1,32 @@
+.side-bar {
+    padding-top: 100px;
+    position: fixed;
+    display: flex;
+    width: 300px;
+    padding-left: 20px;
+    min-height: 100%;
+    background-color: rgba(110, 127, 144, 0.3);
+    border-right: 3px solid rgba(194, 226, 255, 0.35);
+}
+
+.side-navbar {
+    position: fixed;
+    height: 80vh;
+}
+
+.side-navbar a {
+    text-decoration: none;
+    font-size: 24px;
+    color: rgb(220, 220, 220);
+    transition: all 0.2s;
+}
+
+.side-navbar div {
+    background-color: rgba(255, 255, 255, 0.0);
+    transition: all 0.2s;
+}
+
+.side-navbar div:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: all 0.2s;
+}
