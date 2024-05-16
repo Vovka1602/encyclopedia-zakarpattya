@@ -7,7 +7,6 @@ const LocationCard = ({ location }) => {
 
     const [likeIcon, setLikeIcon] = useState("./Images/Icons/heart_red_outline.png");
     const [likeHoverIcon, setLikeHoverIcon] = useState("./Images/Icons/heart_black_outline.png");
-
     const [likesNumber, setLikesNumber] = useState(0);
 
     useEffect(() => {
@@ -19,7 +18,7 @@ const LocationCard = ({ location }) => {
             setLikeIcon("./Images/Icons/heart_red_outline.png");
             setLikeHoverIcon("./Images/Icons/heart_black_outline.png");
         }
-    }, [location.users_liked.length]);
+    }, [location.users_liked, location.users_liked.length, username]);
 
     const handleLikeClick = () => {
         let index = location.users_liked.indexOf(username);
@@ -33,7 +32,7 @@ const LocationCard = ({ location }) => {
             method: "PUT",
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(location)
-        }). then((res) => {
+        }).then((res) => {
             console.log(res);
             if (location.users_liked.includes(username)) {
                 setLikesNumber(likesNumber + 1);
