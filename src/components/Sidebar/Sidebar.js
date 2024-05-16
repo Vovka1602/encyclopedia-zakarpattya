@@ -19,12 +19,12 @@ const Sidebar = ({ page }) => {
                 {(page === "likes") ? (
                     <div className="navbar-tab-selected d-flex align-items-center rounded-pill px-4">
                         <span><img className="sidebar-tab-icon-selected" src="./Images/Icons/sidebar_likes_selected.png"></img></span>
-                        <span className="sidebar-tab-selected"><a href="/">Вподобання</a></span>
+                        <span className="sidebar-tab-selected"><a href="/likes">Вподобання</a></span>
                     </div>
                 ) : (
                     <div className="navbar-tab d-flex align-items-center rounded-pill px-4">
                         <span><img className="sidebar-tab-icon" src="./Images/Icons/sidebar_likes.png"></img></span>
-                        <span className="sidebar-tab"><a href="/">Вподобання</a></span>
+                        <span className="sidebar-tab"><a href="/likes">Вподобання</a></span>
                     </div>
                 )}
                 {(page === "contributions") ? (

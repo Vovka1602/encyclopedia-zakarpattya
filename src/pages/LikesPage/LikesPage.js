@@ -36,7 +36,7 @@ const LikesPage = () => {
         <div className="row">
             <title>Вподобання</title>
             <div className="col-3 px-0">
-                <Sidebar page={"home"}/>
+                <Sidebar page={"likes"}/>
             </div>
             <div className="col-8 px-0">
                 <Header title="Список бажаного"/>
