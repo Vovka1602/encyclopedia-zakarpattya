@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import LocationsList from "../../components/LocationsList/LocationsList";
 import Sidebar from "../../components/Sidebar/Sidebar";
 import Header from "../../components/Header/Header";
+import LikesList from "../../components/LocationsList/LikesList";
 
 const LikesPage = () => {
     const [data, setData] = useState(null);
@@ -30,19 +30,19 @@ const LikesPage = () => {
             let filtered = data.filter(location => location.users_liked.includes(sessionStorage.getItem("username")));
             setFilteredData(filtered);
         }
-    }, []);
+    }, [data]);
 
     return (
         <div className="row">
             <title>Вподобання</title>
             <div className="col-3 px-0">
-                <Sidebar page={"likes"}/>
+                <Sidebar page={"home"}/>
             </div>
             <div className="col-8 px-0">
                 <Header title="Список бажаного"/>
                 <div className="container">
                     <div>
-                        {filteredData && <LocationsList data={filteredData} />}
+                        {filteredData && <LikesList data={filteredData} />}
                     </div>
                 </div>
             </div>

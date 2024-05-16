@@ -74,7 +74,7 @@
 .sidebar-tab {
     padding: 16px;
     display: flex;
-    align-items: start;
+    align-items: flex-start;
     font-weight: 400;
     height: 100%;
     width: 100%;
@@ -88,7 +88,7 @@
 .sidebar-tab-selected {
     padding: 16px;
     display: flex;
-    align-items: start;
+    align-items: flex-start;
     font-size: 24px;
     font-weight: 700;
     height: 100%;
