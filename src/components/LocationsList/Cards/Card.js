@@ -5,10 +5,20 @@ import { useEffect, useState } from "react";
 const LocationCard = ({ location }) => {
     const username = sessionStorage.getItem("username");
 
+    const [likeIcon, setLikeIcon] = useState("./Images/Icons/heart_red_outline.png");
+    const [likeHoverIcon, setLikeHoverIcon] = useState("./Images/Icons/heart_black_outline.png");
+
     const [likesNumber, setLikesNumber] = useState(0);
 
     useEffect(() => {
         setLikesNumber(location.users_liked.length);
+        if (location.users_liked.includes(username)) {
+            setLikeIcon("./Images/Icons/heart_red_filled.png");
+            setLikeHoverIcon("./Images/Icons/heart_black_filled.png");
+        } else {
+            setLikeIcon("./Images/Icons/heart_red_outline.png");
+            setLikeHoverIcon("./Images/Icons/heart_black_outline.png");
+        }
     }, [location.users_liked.length]);
 
     const handleLikeClick = () => {
@@ -23,7 +33,8 @@ const LocationCard = ({ location }) => {
             method: "PUT",
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(location)
-        }). then(() => {
+        }). then((res) => {
+            console.log(res);
             if (location.users_liked.includes(username)) {
                 setLikesNumber(likesNumber + 1);
             } else {
@@ -61,8 +72,8 @@ const LocationCard = ({ location }) => {
                     <button className="button-red" onClick={handleLikeClick}>
                         <div className="button-content">
                             <div className="button-icon">
-                                <img src="./Images/Icons/heart_red.png" alt=""></img>
-                                <img className="img-hover" src="./Images/Icons/heart_black.png" alt=""></img>
+                                <img src={likeIcon} alt=""></img>
+                                <img className="img-hover" src={likeHoverIcon} alt=""></img>
                             </div>
                             <div className="button-label">{likesNumber}</div>
                         </div>
