@@ -7,7 +7,7 @@
     background-color: rgba(55, 65, 75, 0.3);
     backdrop-filter: blur(10px);
     width: 99%;
-    min-width: 650px;
+    min-width: 680px;
     height: 300px;
     box-shadow: 0 0px 40px rgba(0, 0, 0, 0.8);
     transition: all 0.2s;

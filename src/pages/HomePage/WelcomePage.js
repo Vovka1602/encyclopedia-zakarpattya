@@ -29,7 +29,6 @@ const WelcomePage = () => {
                 <div className="container">
                     <title>Ласкаво просимо</title>
                     <div className="page">
-                        <a href="/login">Увійти</a>
                         <div>
                             {data && <WelcomeList data={data} />}
                         </div>

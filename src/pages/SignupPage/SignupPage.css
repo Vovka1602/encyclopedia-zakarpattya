@@ -1,10 +1,68 @@
-.signup-form {
-    margin-top: 100px;
-    margin-left: 50px;
-    margin-right: 50px;
+.card {
+    margin-top: calc(6vw - 40px);
+    background-color: rgba(50, 51, 55, 0.2);
+    backdrop-filter: blur(12px);
+    border: 2px solid rgba(150, 150, 150, 0.3);
+    border-radius: 16px;
+}
+
+.card .card-header {
+    border-top-right-radius: 12px;
+    border-top-left-radius: 12px;
 }
 
 span {
     color: rgb(200, 200, 200);
-    font-size: 16px;
+    font-size: 18px;
+}
+
+.card img {
+    width: 200px;
+    height: 200px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.avatar-settings {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: rgba(0, 1, 5, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+}
+
+.avatar-options {
+    margin-right: 10px;
+    margin-left: auto;
+}
+
+.avatar-options img {
+    margin-right: 6px;
+    margin-left: 6px;
+    border-radius: 12px;
+    width: 100px;
+    height: 100px;
+}
+
+.rounded-circle {
+    margin-left: 25px;
+    margin-right: 23px;
+    border: 3px solid rgba(255, 255, 255, 0.6);
+}
+
+.form-control {
+    background-color: rgba(10, 10, 10, 0.2);
+    transition: all 0.2s;
+}
+
+.form-control:focus {
+    background-color: rgba(24, 27, 30, 1);
 }

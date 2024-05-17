@@ -3,17 +3,26 @@
     {
       "id": "admin",
       "password": "admin1234",
-      "admin_access": true
+      "admin_access": true,
+      "email": "admin@gmail.com",
+      "fullname": "Адміністратор",
+      "avatar": "./Images/Avatars/1.png"
     },
     {
       "id": "user",
       "password": "1234",
-      "admin_access": false
+      "admin_access": false,
+      "email": "user@gmail.com",
+      "fullname": "Користувач",
+      "avatar": "./Images/Avatars/5.png"
     },
     {
-      "id": "user2",
-      "password": "12345",
-      "admin_access": false
+      "id": "vovka1602",
+      "password": "1234567",
+      "admin_access": false,
+      "email": "vovka1602@gmail.com",
+      "fullname": "Володимир",
+      "avatar": "./Images/Avatars/4.png"
     }
   ],
   "locations": [

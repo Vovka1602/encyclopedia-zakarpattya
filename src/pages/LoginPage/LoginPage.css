@@ -1,7 +1,9 @@
 .login-form {
     margin-top: 20vh;
-    margin-left: 350px;
-    margin-right: 350px;
+    display: flex;
+    justify-content: center;
+    margin-left: 10vh;
+    margin-right: 10vh;
 }
 
 .btn {
