@@ -8,7 +8,7 @@
     min-height: 100vh;
     max-width: 100vw;
     padding: 0px;
-    background-color: rgb(25, 27, 30);
+    background-color: transparent;
     text-align: center;
     overflow-x: hidden;
 }

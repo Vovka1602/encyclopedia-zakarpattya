@@ -11,6 +11,7 @@ import LikesPage from './pages/LikesPage/LikesPage';
 function App() {
   return (
     <div className="App">
+        <img className='backdrop' src={require(".//components/backdrop.png")} alt='background'></img>
         <BrowserRouter>
             <Routes>
                 <Route path='/welcome' element={ <WelcomePage/> }></Route>
