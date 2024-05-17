@@ -30,14 +30,16 @@ const HomePage = () => {
         <div className="row">
             <title>Головна</title>
             <div className="col-3 px-0">
-                <Sidebar page={"home"}/>
+                <Sidebar page={"home"} />
             </div>
             <div className="col-8 px-0">
-                <Header title="Головна"/>
+                <Header title="Головна" />
                 <div className="container">
-                    <a href="/welcome">Вийти</a>
-                    <div>
-                        {data && <LocationsList data={data} />}
+                    <div className="page">
+                        <a href="/welcome">Вийти</a>
+                        <div>
+                            {data && <LocationsList data={data} />}
+                        </div>
                     </div>
                 </div>
             </div>

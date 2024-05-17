@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./LoginPage.css"
+import "../../components/Buttons.css";
 import { useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -69,7 +70,9 @@ const LoginPage = () => {
                         </input>
                     </div>
                     <div className="card-footer">
-                        <button className="btn btn-primary btn-lg px-5" type="submit">Вхід</button>
+                        <button className="btn btn-primary btn-lg px-5" type="submit">
+                            <div className="btn-text">Вхід</div>
+                        </button>
                     </div>
                 </div>
             </form>

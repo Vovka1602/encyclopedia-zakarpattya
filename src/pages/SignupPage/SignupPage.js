@@ -41,7 +41,7 @@ const SignupPage = () => {
 
     return (
         <div className="container">
-        <title>Реєстрація</title>
+            <title>Реєстрація</title>
             <form className="signup-form" onSubmit={handleSubmit}>
                 <div className="card" data-bs-theme="dark">
                     <div className="card-header">
@@ -65,7 +65,9 @@ const SignupPage = () => {
                         </input>
                     </div>
                     <div className="card-footer">
-                        <button className="btn btn-primary btn-lg px-5" type="submit">Реєстрація</button>
+                        <button className="btn btn-primary btn-lg px-5" type="submit">
+                            <div className="btn-text">Реєстрація</div>
+                        </button>
                     </div>
                 </div>
             </form>

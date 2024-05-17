@@ -1,10 +1,23 @@
 .login-form {
-    margin-top: 100px;
-    margin-left: 50px;
-    margin-right: 50px;
+    margin-top: 20vh;
+    margin-left: 350px;
+    margin-right: 350px;
 }
 
-span {
-    color: rgb(200, 200, 200);
-    font-size: 16px;
+.btn {
+    border-radius: 12px;
+    transform: scale(1);
+    transition: all 0.3s;
+}
+
+.btn .btn-text {
+    font-size: 24px;
+    transform: scale(1);
+    color: white;
+    transition: all 0.3s;
+}
+
+.btn:active .btn-text {
+    transform: scale(0.7);
+    transition: all 0.3s;
 }

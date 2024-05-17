@@ -20,6 +20,10 @@
     text-decoration: none;
 }
 
+.side-navbar .btn {
+    width: 85%;
+}
+
 .navbar-tab {
     width: 270px;
     height: 68px;
@@ -125,4 +129,15 @@
 
 .sidebar-tab-icon-selected {
     margin-bottom: 5px;
+}
+
+.sidebar-button-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 85%;
+    background-color: black;
+    position: absolute;
+    bottom: 650px;
+    left: 30px;
 }
