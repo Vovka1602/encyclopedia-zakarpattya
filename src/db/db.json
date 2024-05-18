@@ -50,7 +50,7 @@
       "ticket_price": 40,
       "location_short": "м. Мукачево",
       "description_short": "Неприступна фортеця Мукачева",
-      "author": "default",
+      "author": "user",
       "status": "accepted"
     },
     {
@@ -63,7 +63,7 @@
       "ticket_price": 0,
       "location_short": "с. Невицьке",
       "description_short": "Середньовічний замок з видом на річку Уж",
-      "author": "default",
+      "author": "user",
       "status": "pending"
     }
   ]
