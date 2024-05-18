@@ -68,7 +68,7 @@ const SignupPage = () => {
 
     return (
         <div className='container'>
-            <title>Рестрація - RentCar</title>
+            <title>Реєстрація</title>
             <form onSubmit={handleSubmit}>
                 <div className='card' data-bs-theme='dark'>
                     <div className='card-header'>

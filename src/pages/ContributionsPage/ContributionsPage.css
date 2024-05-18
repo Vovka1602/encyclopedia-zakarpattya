@@ -1,0 +1,8 @@
+.page-bottom {
+    position: fixed;
+    background-color: rgba(2, 3, 5, 0.5);
+    backdrop-filter: blur(10px);
+    bottom: 0px;
+    width: calc(100vw - 280px);
+    height: 100px;
+}

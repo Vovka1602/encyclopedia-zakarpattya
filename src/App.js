@@ -8,6 +8,7 @@ import LocationInfoPage from './pages/LocationInfoPage/LocationInfoPage';
 import WelcomePage from './pages/HomePage/WelcomePage';
 import LikesPage from './pages/LikesPage/LikesPage';
 import ContributionsPage from './pages/ContributionsPage/ContributionsPage';
+import NewContributionPage from './pages/NewContributionPage/NewContributionPage';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
                 <Route path='/' element={ <HomePage/> }></Route>
                 <Route path='/likes' element={ <LikesPage/> }></Route>
                 <Route path='/contributions' element={ <ContributionsPage/> }></Route>
+                <Route path='/newcontribution' element={ <NewContributionPage/> }></Route>
                 <Route path='/signup' element={ <SignupPage/> }></Route>
                 <Route path='/login' element={ <LoginPage/> }></Route>
                 <Route path='/locationinfo/:id' element={ <LocationInfoPage/> }></Route>
