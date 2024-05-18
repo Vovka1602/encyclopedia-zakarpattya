@@ -84,3 +84,26 @@
 .card-content .price-free {
     color: rgb(110, 214, 117);
 }
+
+.card-content .status-accepted {
+    color: rgb(100, 220, 100);
+    font-weight: 600;
+}
+
+.card-content .status-pending {
+    color: rgb(225, 200, 65);
+    font-weight: 600;
+}
+
+.card-content .status-rejected {
+    color: rgb(236, 90, 70);
+    font-weight: 600;
+}
+
+.status-icon {
+    width: 20px;
+    height: 20px;
+    margin-top: 5px;
+    margin-left: 2px;
+    margin-right: 8px;
+}

@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import LocationsList from "../../components/LocationsList/LocationsList";
 import Sidebar from "../../components/Sidebar/Sidebar";
 import Header from "../../components/Header/Header";
+import ContributionsList from "../../components/LocationsList/ContributionsList";
 
 const ContributionsPage = () => {
     const [data, setData] = useState(null);
@@ -43,7 +43,7 @@ const ContributionsPage = () => {
                 <div className="container">
                     <div className="page">
                         <div>
-                            {filteredData && <LocationsList data={filteredData} />}
+                            {filteredData && <ContributionsList data={filteredData} />}
                         </div>
                     </div>
                 </div>
