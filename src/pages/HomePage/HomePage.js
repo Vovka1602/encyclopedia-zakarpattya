@@ -36,7 +36,6 @@ const HomePage = () => {
                 <Header title="Головна" />
                 <div className="container">
                     <div className="page">
-                        <a href="/welcome">Вийти</a>
                         <div>
                             {data && <LocationsList data={data} />}
                         </div>

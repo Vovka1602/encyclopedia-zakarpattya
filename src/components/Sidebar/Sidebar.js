@@ -60,15 +60,19 @@ const Sidebar = ({ page }) => {
                     </div>
                 )}
                 {(page === "welcome") ? (
-                <div className="mt-5">
-                    <a href="/login">
-                        <button className="btn btn-primary btn-lg rounded-pill px-5 py-3 fs-4">Увійти</button>                       
+                    <div className="mt-5">
+                        <a href="/login">
+                            <button className="btn btn-primary btn-lg rounded-pill px-5 py-3 fs-4">Увійти</button>
+                        </a>
+                        <a href="/signup">
+                            <button className="btn btn-outline-primary btn-lg rounded-pill px-3 py-3 fs-4 mt-3">Зареєструватися</button>
+                        </a>
+                    </div>
+                ) : (
+                    <a href="/welcome">
+                        <button className="btn btn-outline-primary btn-lg rounded-pill px-3 py-3 fs-4 mt-5">Вийти</button>
                     </a>
-                    <a href="/signup">
-                        <button className="btn btn-outline-primary btn-lg rounded-pill px-3 py-3 fs-4 mt-3">Зареєструватися</button>                       
-                    </a>
-                </div>
-            ) : (<></>)}
+                )}
             </div>
         </div>
     );
