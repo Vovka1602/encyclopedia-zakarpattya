@@ -7,6 +7,7 @@ import "./HomePage.css";
 
 const HomePage = () => {
     const [data, setData] = useState(null);
+    const [filteredData, setFilteredData] = useState(null);
 
     const navigate = useNavigate();
 
@@ -25,6 +26,12 @@ const HomePage = () => {
             });
     }, []);
 
+    useEffect(() => {
+        if (data !== null) {
+            let filtered = data.filter(location => location.status === "accepted");
+            setFilteredData(filtered);
+        }
+    }, [data]);
 
     return (
         <div className="row">
@@ -37,7 +44,7 @@ const HomePage = () => {
                 <div className="container">
                     <div className="page">
                         <div>
-                            {data && <LocationsList data={data} />}
+                            {filteredData && <LocationsList data={filteredData} />}
                         </div>
                     </div>
                 </div>

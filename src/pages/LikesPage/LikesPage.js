@@ -27,7 +27,7 @@ const LikesPage = () => {
 
     useEffect(() => {
         if (data !== null) {
-            let filtered = data.filter(location => location.users_liked.includes(sessionStorage.getItem("username")));
+            let filtered = data.filter(location => (location.users_liked.includes(sessionStorage.getItem("username")) && location.status === "accepted"));
             setFilteredData(filtered);
         }
     }, [data]);

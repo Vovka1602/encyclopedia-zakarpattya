@@ -27,7 +27,7 @@
   ],
   "locations": [
     {
-      "id": "uzhhorodcastle",
+      "id": "1",
       "name": "Ужгородський замок",
       "image": "./Images/Locations/uzhhorod_castle_1.jpg",
       "users_liked": [
@@ -36,18 +36,35 @@
       ],
       "ticket_price": 50,
       "location_short": "м. Ужгород",
-      "description_short": "Вишуканий замок у серці Ужгорода"
+      "description_short": "Вишуканий замок у серці Ужгорода",
+      "author": "default",
+      "status": "accepted"
     },
     {
-      "id": "palanok",
+      "id": "2",
       "name": "Замок 'Паланок'",
       "image": "./Images/Locations/palanok_1.jpg",
       "users_liked": [
         "admin"
       ],
-      "ticket_price": 0,
+      "ticket_price": 40,
       "location_short": "м. Мукачево",
-      "description_short": "Неприступна фортеця Мукачева"
+      "description_short": "Неприступна фортеця Мукачева",
+      "author": "default",
+      "status": "accepted"
+    },
+    {
+      "id": "3",
+      "name": "Невицький замок",
+      "image": "./Images/Locations/nevytsky_1.jpg",
+      "users_liked": [
+        "admin"
+      ],
+      "ticket_price": 0,
+      "location_short": "с. Невицьке",
+      "description_short": "Середньовічний замок з видом на річку Уж",
+      "author": "default",
+      "status": "pending"
     }
   ]
 }
