@@ -141,3 +141,30 @@
     bottom: 650px;
     left: 30px;
 }
+
+.sidebar-userdata {
+    display: flex;
+    position: absolute;
+    bottom: 30px;
+    left: 40px;
+    width: 100%;
+}
+
+.sidebar-userdata img {
+    width: 60px;
+    height: 60px;
+    margin-left: 5px;
+    margin-right: 12px;
+}
+
+.sidebar-userdata h2 {
+    float: left;
+    color: rgba(220, 235, 250, 0.7);
+    font-weight: 400;
+}
+
+.sidebar-userdata h3 {
+    float: left;
+    color: rgba(180, 185, 194, 0.4);
+    font-weight: 400;
+}

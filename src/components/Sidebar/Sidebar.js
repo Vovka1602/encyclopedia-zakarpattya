@@ -1,6 +1,23 @@
+import { useEffect, useState } from "react";
 import "./Sidebar.css";
 
 const Sidebar = ({ page }) => {
+    const [id, setId] = useState("");
+    const [fullname, setFullname] = useState("");
+    const [avatar, setAvatar] = useState("./image/avatars/1.png");
+    const [adminAccess, setAdminAccess] = useState(false);
+
+    useEffect(() => {
+        fetch("http://localhost:8000/users/" + sessionStorage.getItem("username"))
+            .then(res => res.json())
+            .then(userdata => {
+                setId(userdata.id);
+                setFullname(userdata.fullname);
+                setAvatar(userdata.avatar);
+                setAdminAccess(userdata.admin_access);
+            });
+    })
+
     return (
         <div className="side-bar">
             <div className="side-navbar ms-3">
@@ -60,7 +77,7 @@ const Sidebar = ({ page }) => {
                     </div>
                 )}
                 {(page === "welcome") ? (
-                    <div className="mt-5">
+                    <div className="mt-4">
                         <a href="/login">
                             <button className="btn btn-primary btn-lg rounded-pill px-5 py-3 fs-4">Увійти</button>
                         </a>
@@ -70,10 +87,23 @@ const Sidebar = ({ page }) => {
                     </div>
                 ) : (
                     <a href="/welcome">
-                        <button className="btn btn-outline-primary btn-lg rounded-pill px-3 py-3 fs-4 mt-5">Вийти</button>
+                        <button className="btn btn-outline-primary btn-lg rounded-pill px-3 py-3 fs-4 mt-4">Вийти</button>
                     </a>
                 )}
             </div>
+            {(page !== "welcome") ? (
+                <div className="sidebar-userdata">
+                    <span><img className="rounded-circle" src={avatar} alt=""></img></span>
+                    <span>
+                        <div>
+                            <h2 className="fs-4">{fullname}</h2>
+                        </div>
+                        <div>
+                            <h3 className="fs-5">{id}</h3>
+                        </div>
+                    </span>
+                </div>
+            ) : (<></>)}
         </div>
     );
 }

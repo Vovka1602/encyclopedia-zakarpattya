@@ -5,6 +5,7 @@ import Sidebar from "../../components/Sidebar/Sidebar";
 
 const WelcomePage = () => {
     const [data, setData] = useState(null);
+    const [filteredData, setFilteredData] = useState(null);
 
     useEffect(() => {
         sessionStorage.clear();
@@ -18,6 +19,13 @@ const WelcomePage = () => {
             });
     }, []);
 
+    useEffect(() => {
+        if (data !== null) {
+            let filtered = data.filter(location => location.status === "accepted");
+            setFilteredData(filtered);
+        }
+    }, [data]);
+
     return (
         <div className="row">
             <title>Ласкаво просимо</title>
@@ -30,7 +38,7 @@ const WelcomePage = () => {
                     <title>Ласкаво просимо</title>
                     <div className="page">
                         <div>
-                            {data && <WelcomeList data={data} />}
+                            {filteredData && <WelcomeList data={filteredData} />}
                         </div>
                     </div>
                 </div>
