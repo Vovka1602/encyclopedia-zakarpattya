@@ -24,72 +24,72 @@
     width: 86%;
 }
 
-.navbar-tab {
+.navbar-elem {
     width: 270px;
     height: 68px;
     background-color: rgba(255, 255, 255, 0.0);
     transition: all 0.2s;
 }
 
-.navbar-tab span {
+.navbar-elem span {
     font-size: 24px;
     transition: all 0.2s;
 }
 
-.navbar-tab img {
+.navbar-elem img {
     width: 24px;
     transition: all 0.2s;
 }
 
-.navbar-tab:hover {
+.navbar-elem:hover {
     background-color: rgba(255, 255, 255, 0.1);
     transition: all 0.2s;
 }
 
-.navbar-tab:hover span {
+.navbar-elem:hover span {
     font-size: 28px;
     transition: all 0.2s;
     margin-bottom: 6px;
 }
 
-.navbar-tab:hover img {
-    margin-top: 8px;
+.navbar-elem:hover img {
+    margin-top: 7px;
     width: 28px;
     transition: all 0.2s;
 }
 
-.navbar-tab-selected {
+.navbar-elem-selected {
     width: 270px;
     height: 68px;
     background-color: rgba(255, 255, 255, 0.0);
     transition: all 0.2s;
 }
 
-.navbar-tab-selected span {
+.navbar-elem-selected span {
     font-size: 28px;
     margin-bottom: 6px;
     transition: all 0.2s;
 }
 
-.navbar-tab-selected img {
-    margin-top: 8px;
+.navbar-elem-selected img {
+    margin-top: 7px;
     width: 28px;
     transition: all 0.2s;
 }
 
-.navbar-tab-selected:hover {
+.navbar-elem-selected:hover {
     background-color: rgba(255, 255, 255, 0.1);
     transition: all 0.2s;
 }
 
-.navbar-tab-selected:hover span {
+.navbar-elem-selected:hover span {
     font-size: 28px;
     transition: all 0.2s;
     margin-bottom: 6px;
 }
 
-.navbar-tab-selected:hover img {
-    margin-top: 8px;
+.navbar-elem-selected:hover img {
+    margin-top: 7px;
     width: 28px;
     transition: all 0.2s;
 }
