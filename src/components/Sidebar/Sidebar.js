@@ -21,62 +21,98 @@ const Sidebar = ({ page }) => {
     return (
         <div className="side-bar">
             <div className="side-navbar ms-3">
-                {(page === "home") ? (
-                    <div className="navbar-elem-selected d-flex align-items-center rounded-pill px-4">
-                        <span><img className="sidebar-tab-icon-selected" src="./Images/Icons/sidebar_home_selected.png" alt=""></img></span>
-                        <span className="sidebar-tab-selected"><a href="/">Головна</a></span>
+                {(page !== "welcome") ? (
+                    <div>
+                        {(page === "home") ? (
+                            <div className="navbar-elem-selected d-flex align-items-center rounded-pill px-4">
+                                <span><img className="sidebar-tab-icon-selected" src="./Images/Icons/sidebar_home_selected.png" alt=""></img></span>
+                                <span className="sidebar-tab-selected"><a href="/">Головна</a></span>
+                            </div>
+                        ) : (
+                            <div className="navbar-elem d-flex align-items-center rounded-pill px-4">
+                                <span><img className="sidebar-tab-icon" src="./Images/Icons/sidebar_home.png" alt=""></img></span>
+                                <span className="sidebar-tab"><a href="/">Головна</a></span>
+                            </div>
+                        )}
+                        {(page === "likes") ? (
+                            <div className="navbar-elem-selected d-flex align-items-center rounded-pill px-4">
+                                <span><img className="sidebar-tab-icon-selected" src="./Images/Icons/sidebar_likes_selected.png" alt=""></img></span>
+                                <span className="sidebar-tab-selected"><a href="/likes">Вподобання</a></span>
+                            </div>
+                        ) : (
+                            <div className="navbar-elem d-flex align-items-center rounded-pill px-4">
+                                <span><img className="sidebar-tab-icon" src="./Images/Icons/sidebar_likes.png" alt=""></img></span>
+                                <span className="sidebar-tab"><a href="/likes">Вподобання</a></span>
+                            </div>
+                        )}
+                        {!adminAccess ? (
+                            <div>
+                                {(page === "contributions") ? (
+                                    <div className="navbar-elem-selected d-flex align-items-center rounded-pill px-4">
+                                        <span><img className="sidebar-tab-icon-selected" src="./Images/Icons/sidebar_contributions_selected.png" alt=""></img></span>
+                                        <span className="sidebar-tab-selected"><a href="/contributions">Внески</a></span>
+                                    </div>
+                                ) : (
+                                    <div className="navbar-elem d-flex align-items-center rounded-pill px-4">
+                                        <span><img className="sidebar-tab-icon" src="./Images/Icons/sidebar_contributions.png" alt=""></img></span>
+                                        <span className="sidebar-tab"><a href="/contributions">Внески</a></span>
+                                    </div>
+                                )}
+                            </div>
+                        ) : (<></>)}
+                        {(page === "notifications") ? (
+                            <div className="navbar-elem-selected d-flex align-items-center rounded-pill px-4">
+                                <span><img className="sidebar-tab-icon-selected" src="./Images/Icons/sidebar_notifications_selected.png" alt=""></img></span>
+                                <span className="sidebar-tab-selected"><a href="/">Сповіщення</a></span>
+                            </div>
+                        ) : (
+                            <div className="navbar-elem d-flex align-items-center rounded-pill px-4">
+                                <span><img className="sidebar-tab-icon" src="./Images/Icons/sidebar_notifications.png" alt=""></img></span>
+                                <span className="sidebar-tab"><a href="/">Сповіщення</a></span>
+                            </div>
+                        )}
+                        {(page === "myprofile") ? (
+                            <div className="navbar-elem-selected d-flex align-items-center rounded-pill px-4">
+                                <span><img className="sidebar-tab-icon-selected" src="./Images/Icons/sidebar_myprofile_selected.png" alt=""></img></span>
+                                <span className="sidebar-tab-selected"><a href="/">Профіль</a></span>
+                            </div>
+                        ) : (
+                            <div className="navbar-elem d-flex align-items-center rounded-pill px-4">
+                                <span><img className="sidebar-tab-icon" src="./Images/Icons/sidebar_myprofile.png" alt=""></img></span>
+                                <span className="sidebar-tab admin"><a href="/">Профіль</a></span>
+                            </div>
+                        )}
+                        {adminAccess ? (
+                            <div className="mt-5">
+                                {(page === "moderation") ? (
+                                    <div className="navbar-elem-selected d-flex align-items-center rounded-pill px-4">
+                                        <span><img className="sidebar-tab-icon-selected" src="./Images/Icons/sidebar_admin_moderation_selected.png" alt=""></img></span>
+                                        <span className="sidebar-tab-admin-selected"><a href="/">Модерація</a></span>
+                                    </div>
+                                ) : (
+                                    <div className="navbar-elem d-flex align-items-center rounded-pill px-4">
+                                        <span><img className="sidebar-tab-icon" src="./Images/Icons/sidebar_admin_moderation.png" alt=""></img></span>
+                                        <span className="sidebar-tab-admin"><a href="/">Модерація</a></span>
+                                    </div>
+                                )}
+                                {(page === "administering") ? (
+                                    <div className="navbar-elem-selected d-flex align-items-center rounded-pill px-4">
+                                        <span><img className="sidebar-tab-icon-selected" src="./Images/Icons/sidebar_admin_administering_selected.png" alt=""></img></span>
+                                        <span className="sidebar-tab-admin-selected"><a href="/">Адміністрування</a></span>
+                                    </div>
+                                ) : (
+                                    <div className="navbar-elem d-flex align-items-center rounded-pill px-4">
+                                        <span><img className="sidebar-tab-icon" src="./Images/Icons/sidebar_admin_administering.png" alt=""></img></span>
+                                        <span className="sidebar-tab-admin"><a href="/">Адміністрування</a></span>
+                                    </div>
+                                )}
+                            </div>
+                        ) : (<></>)}
+                        <a href="/welcome">
+                            <button className="btn btn-outline-primary btn-lg rounded-pill px-3 py-3 fs-4 mt-4">Вийти</button>
+                        </a>
                     </div>
                 ) : (
-                    <div className="navbar-elem d-flex align-items-center rounded-pill px-4">
-                        <span><img className="sidebar-tab-icon" src="./Images/Icons/sidebar_home.png" alt=""></img></span>
-                        <span className="sidebar-tab"><a href="/">Головна</a></span>
-                    </div>
-                )}
-                {(page === "likes") ? (
-                    <div className="navbar-elem-selected d-flex align-items-center rounded-pill px-4">
-                        <span><img className="sidebar-tab-icon-selected" src="./Images/Icons/sidebar_likes_selected.png" alt=""></img></span>
-                        <span className="sidebar-tab-selected"><a href="/likes">Вподобання</a></span>
-                    </div>
-                ) : (
-                    <div className="navbar-elem d-flex align-items-center rounded-pill px-4">
-                        <span><img className="sidebar-tab-icon" src="./Images/Icons/sidebar_likes.png" alt=""></img></span>
-                        <span className="sidebar-tab"><a href="/likes">Вподобання</a></span>
-                    </div>
-                )}
-                {(page === "contributions") ? (
-                    <div className="navbar-elem-selected d-flex align-items-center rounded-pill px-4">
-                        <span><img className="sidebar-tab-icon-selected" src="./Images/Icons/sidebar_contributions_selected.png" alt=""></img></span>
-                        <span className="sidebar-tab-selected"><a href="/contributions">Внески</a></span>
-                    </div>
-                ) : (
-                    <div className="navbar-elem d-flex align-items-center rounded-pill px-4">
-                        <span><img className="sidebar-tab-icon" src="./Images/Icons/sidebar_contributions.png" alt=""></img></span>
-                        <span className="sidebar-tab"><a href="/contributions">Внески</a></span>
-                    </div>
-                )}
-                {(page === "notifications") ? (
-                    <div className="navbar-elem-selected d-flex align-items-center rounded-pill px-4">
-                        <span><img className="sidebar-tab-icon-selected" src="./Images/Icons/sidebar_notifications_selected.png" alt=""></img></span>
-                        <span className="sidebar-tab-selected"><a href="/">Сповіщення</a></span>
-                    </div>
-                ) : (
-                    <div className="navbar-elem d-flex align-items-center rounded-pill px-4">
-                        <span><img className="sidebar-tab-icon" src="./Images/Icons/sidebar_notifications.png" alt=""></img></span>
-                        <span className="sidebar-tab"><a href="/">Сповіщення</a></span>
-                    </div>
-                )}
-                {(page === "myprofile") ? (
-                    <div className="navbar-elem-selected d-flex align-items-center rounded-pill px-4">
-                        <span><img className="sidebar-tab-icon-selected" src="./Images/Icons/sidebar_myprofile_selected.png" alt=""></img></span>
-                        <span className="sidebar-tab-selected"><a href="/">Профіль</a></span>
-                    </div>
-                ) : (
-                    <div className="navbar-elem d-flex align-items-center rounded-pill px-4">
-                        <span><img className="sidebar-tab-icon" src="./Images/Icons/sidebar_myprofile.png" alt=""></img></span>
-                        <span className="sidebar-tab"><a href="/">Профіль</a></span>
-                    </div>
-                )}
-                {(page === "welcome") ? (
                     <div className="mt-4">
                         <a href="/login">
                             <button className="btn btn-primary btn-lg rounded-pill px-5 py-3 fs-4">Увійти</button>
@@ -85,23 +121,35 @@ const Sidebar = ({ page }) => {
                             <button className="btn btn-outline-primary btn-lg rounded-pill px-3 py-3 fs-4 mt-3">Зареєструватися</button>
                         </a>
                     </div>
-                ) : (
-                    <a href="/welcome">
-                        <button className="btn btn-outline-primary btn-lg rounded-pill px-3 py-3 fs-4 mt-4">Вийти</button>
-                    </a>
                 )}
             </div>
             {(page !== "welcome") ? (
-                <div className="sidebar-userdata">
-                    <span><img className="rounded-circle" src={avatar} alt=""></img></span>
-                    <span>
-                        <div>
-                            <h2 className="fs-4">{fullname}</h2>
+                <div>
+                    {adminAccess ? (
+                        <div className="sidebar-userdata-admin">
+                            <span><img className="rounded-circle" src={avatar} alt=""></img></span>
+                            <span>
+                                <div>
+                                    <h2 className="fs-4">{fullname}</h2>
+                                </div>
+                                <div>
+                                    <h3 className="fs-5">{id}</h3>
+                                </div>
+                            </span>
                         </div>
-                        <div>
-                            <h3 className="fs-5">{id}</h3>
+                    ) : (
+                        <div className="sidebar-userdata">
+                            <span><img className="rounded-circle" src={avatar} alt=""></img></span>
+                            <span>
+                                <div>
+                                    <h2 className="fs-4">{fullname}</h2>
+                                </div>
+                                <div>
+                                    <h3 className="fs-5">{id}</h3>
+                                </div>
+                            </span>
                         </div>
-                    </span>
+                    )}
                 </div>
             ) : (<></>)}
         </div>

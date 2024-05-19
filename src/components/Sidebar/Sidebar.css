@@ -2,7 +2,7 @@
     padding-top: 100px;
     position: fixed;
     display: flex;
-    width: 320px;
+    width: 380px;
     padding-left: 20px;
     min-height: 100%;
     backdrop-filter: blur(14px);
@@ -25,7 +25,7 @@
 }
 
 .navbar-elem {
-    width: 270px;
+    width: 325px;
     height: 68px;
     background-color: rgba(255, 255, 255, 0.0);
     transition: all 0.2s;
@@ -59,7 +59,7 @@
 }
 
 .navbar-elem-selected {
-    width: 270px;
+    width: 325px;
     height: 68px;
     background-color: rgba(255, 255, 255, 0.0);
     transition: all 0.2s;
@@ -142,6 +142,35 @@
     left: 30px;
 }
 
+.sidebar-tab-admin {
+    padding: 16px;
+    display: flex;
+    align-items: flex-start;
+    font-weight: 400;
+    height: 100%;
+    width: 100%;
+    transition: all 0.2s;
+}
+
+.sidebar-tab-admin a {
+    color: rgb(160, 200, 90);
+}
+
+.sidebar-tab-admin-selected {
+    padding: 16px;
+    display: flex;
+    align-items: flex-start;
+    font-size: 24px;
+    font-weight: 700;
+    height: 100%;
+    width: 100%;
+    transition: all 0.2s;
+}
+
+.sidebar-tab-admin-selected a {
+    color: rgb(190, 240, 100);
+}
+
 .sidebar-userdata {
     display: flex;
     position: absolute;
@@ -166,5 +195,32 @@
 .sidebar-userdata h3 {
     float: left;
     color: rgba(180, 185, 194, 0.4);
+    font-weight: 400;
+}
+
+.sidebar-userdata-admin {
+    display: flex;
+    position: absolute;
+    bottom: 30px;
+    left: 40px;
+    width: 100%;
+}
+
+.sidebar-userdata-admin img {
+    width: 60px;
+    height: 60px;
+    margin-left: 5px;
+    margin-right: 12px;
+}
+
+.sidebar-userdata-admin h2 {
+    float: left;
+    color: rgba(220, 255, 132, 0.7);
+    font-weight: 400;
+}
+
+.sidebar-userdata-admin h3 {
+    float: left;
+    color: rgba(202, 233, 110, 0.4);
     font-weight: 400;
 }

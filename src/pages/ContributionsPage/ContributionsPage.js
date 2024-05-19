@@ -8,6 +8,7 @@ import "./ContributionsPage.css";
 const ContributionsPage = () => {
     const [data, setData] = useState(null);
     const [filteredData, setFilteredData] = useState(null);
+    const [adminAccess, setAdminAccess] = useState(false);
 
     const navigate = useNavigate();
 
@@ -15,6 +16,14 @@ const ContributionsPage = () => {
         let username = sessionStorage.getItem("username");
         if (username === '' || username === null) {
             navigate('/welcome');
+        } else {
+            fetch("http://localhost:8000/users/" + username)
+                .then(res => res.json())
+                .then(user => {
+                    if (user.admin_access === true) {
+                        navigate("/");
+                    }
+                })
         }
     }, [navigate]);
 
@@ -55,8 +64,8 @@ const ContributionsPage = () => {
                             <button className="button-green">
                                 <div className="button-content">
                                     <div className="button-icon">
-                                        <img src="Images/Icons/plus_green.png"></img>
-                                        <img className="img-hover" src="Images/Icons/plus_black.png"></img>
+                                        <img src="Images/Icons/plus_green.png" alt=""></img>
+                                        <img className="img-hover" src="Images/Icons/plus_black.png" alt=""></img>
                                     </div>
                                     <div className="button-label">Нова пропозиція</div>
                                 </div>
