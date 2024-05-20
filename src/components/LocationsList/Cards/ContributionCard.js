@@ -44,17 +44,17 @@ const ContributionCard = ({ location }) => {
                             <h3 className="me-3">Статус:</h3>
                             {(location.status === "accepted") ? (
                                 <div className="d-flex">
-                                    <img className="status-icon" src="Images/Icons/status_accepted.png"></img>
+                                    <img className="status-icon" src="Images/Icons/status_accepted.png" alt=""></img>
                                     <h3 className="status-accepted">Прийнято</h3>
                                 </div>
                             ) : (location.status === "pending") ? (
                                 <div className="d-flex">
-                                    <img className="status-icon" src="Images/Icons/status_pending.png"></img>
+                                    <img className="status-icon" src="Images/Icons/status_pending.png" alt=""></img>
                                     <h3 className="status-pending">Очікує на модерацію</h3>
                                 </div>
                             ) : (
                                 <div className="d-flex">
-                                    <img className="status-icon" src="Images/Icons/status_rejected.png"></img>
+                                    <img className="status-icon" src="Images/Icons/status_rejected.png" alt=""></img>
                                     <h3 className="status-rejected">Відхилено</h3>
                                 </div>
                             )}

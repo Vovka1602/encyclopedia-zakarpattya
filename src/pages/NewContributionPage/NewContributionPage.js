@@ -4,8 +4,6 @@ import PreviewCard from "../../components/LocationsList/Cards/PreviewCard";
 import "./NewContributionPage.css";
 
 const NewContributionPage = () => {
-    const [id, setId] = useState("");
-    const [password, setPassword] = useState("");
     const [name, setName] = useState("");
     const [ticketPrice, setTicketPrice] = useState(null);
     const [locationShort, setShortLocation] = useState("");
@@ -26,7 +24,7 @@ const NewContributionPage = () => {
             "author": sessionStorage.getItem("username"),
             "status": "pending"
         });
-    })
+    }, [name, selectedImage, ticketPrice, descriptionShort, locationShort])
 
     const handleSubmit = (e) => {
         e.preventDefault();

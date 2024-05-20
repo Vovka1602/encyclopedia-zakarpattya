@@ -11,7 +11,7 @@ const InfoModal = ({ location, showModal, handleClose }) => {
                     <Modal.Title>Пропозиція <strong>{location.id}</strong></Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <img src={location.image} alt={location.name} className="img-fluid" />
+                    <img src={location.image} alt={location.name} className="modal-image img-fluid" />
                     <p>
                         <strong>Назва:</strong> {location.name}
                     </p>

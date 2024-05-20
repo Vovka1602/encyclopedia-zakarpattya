@@ -5,6 +5,17 @@
     color: rgb(202, 202, 202);
 }
 
+.confirmation-modal {
+    backdrop-filter: blur(12px);
+    background-color: rgba(0,0,0,0.3);
+    z-index: 9999;
+    color: rgb(202, 202, 202);
+}
+
+.confirmation-modal label {
+    font-size: 22px;
+}
+
 .btn-close {
     background-color: rgba(230, 230, 230, 0.6);
     border: 2px solid rgba(255, 255, 255, 0.6);
@@ -33,7 +44,7 @@
     padding: 40px;
 }
 
-.modal-content img {
+.modal-content .modal-image {
     margin-top: -14px; 
     margin-bottom: 30px; 
     border-radius: 12px;
@@ -54,4 +65,20 @@
     background-color: rgba(1, 2, 6, 0.4);
     border-bottom-left-radius: 19px;
     border-bottom-right-radius: 19px;
+}
+
+.confirmation-modal textarea {
+    background-color: rgb(20, 22, 25);
+    border: 2px solid rgba(200, 200, 200, 0.4);
+    font-size: 20px;
+    color: rgb(220, 220, 220);
+    transition: all 0.2s;
+}
+
+.confirmation-modal textarea:focus {
+    background-color: rgb(32, 33, 36);
+    border: 2px solid rgba(200, 200, 200, 0.4);
+    font-size: 20px;
+    color: rgb(200, 200, 200);
+    transition: all 0.2s;
 }

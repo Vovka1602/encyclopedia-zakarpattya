@@ -18,7 +18,6 @@ const LocationInfoPage = () => {
             }
         })
         .then((result) => {
-            console.log(result);
             setLocation(result);
             setTitle(result.name);
         })
@@ -26,6 +25,10 @@ const LocationInfoPage = () => {
             console.error(err);
         })
     }, [id]);
+
+    useEffect(() => {
+        console.log(location);
+    }, [location])
 
     return (
         <div className="container">

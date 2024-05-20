@@ -2,10 +2,14 @@ import "./Card.css";
 import "../../Buttons.css";
 import { useEffect, useState } from "react";
 import InfoModal from "../../Modals/InfoModal";
+import AcceptModal from "../../Modals/AcceptModal";
+import RejectModal from "../../Modals/RejectModal";
 
 const ModerationCard = ({ location }) => {
     const [isVisible, setVisible] = useState(true);
     const [showInfoModal, setShowInfoModal] = useState(false);
+    const [showAcceptModal, setShowAcceptModal] = useState(false);
+    const [showRejectModal, setShowRejectModal] = useState(false);
     const [authorAvatar, setAuthorAvatar] = useState("images/avatars/1.png")
 
     useEffect(() => {
@@ -15,9 +19,9 @@ const ModerationCard = ({ location }) => {
                 console.log(userdata);
                 setAuthorAvatar(userdata.avatar);
             })
-    }, [])
+    }, [location.author])
     
-    const handleAcceptClick = () => {
+    const handleAcceptConfirm = () => {
         location.status = "accepted";
         fetch("http://localhost:8000/locations/" + location.id, {
             method: "PUT",
@@ -25,8 +29,30 @@ const ModerationCard = ({ location }) => {
             body: JSON.stringify(location)
         }).then((res) => {
             console.log(res);
+            setShowAcceptModal(false);
             setVisible(false);
-        })
+        });
+    }
+
+    const handleAcceptClick = () => {
+        setShowAcceptModal(true)
+    }
+
+    const handleRejectConfirm = () => {
+        location.status = "rejected";
+        fetch("http://localhost:8000/locations/" + location.id, {
+            method: "PUT",
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify(location)
+        }).then((res) => {
+            console.log(res);
+            setShowAcceptModal(false);
+            setVisible(false);
+        });
+    }
+
+    const handleRejectClick = () => {
+        setShowRejectModal(true);
     }
 
     const handleInfoClick = () => {
@@ -37,16 +63,12 @@ const ModerationCard = ({ location }) => {
         setShowInfoModal(false);
     }
 
-    const handleRejectClick = () => {
-        location.status = "rejected";
-        fetch("http://localhost:8000/locations/" + location.id, {
-            method: "PUT",
-            headers: { 'content-type': 'application/json' },
-            body: JSON.stringify(location)
-        }).then((res) => {
-            console.log(res);
-            setVisible(false);
-        })
+    const handleCloseAcceptModal = () => {
+        setShowAcceptModal(false);
+    }
+
+    const handleCloseRejectModal = () => {
+        setShowRejectModal(false);
     }
 
     return (
@@ -63,7 +85,7 @@ const ModerationCard = ({ location }) => {
                         <h2>{location.name}</h2>
                         <div className="card-content-elem">
                             <h3>Автор:</h3>
-                            <img className="rounded-circle" src={authorAvatar}></img>
+                            <img className="rounded-circle" src={authorAvatar} alt=""></img>
                             <h3>{location.author}</h3>
                         </div>
                         <div className="button-panel">
@@ -96,6 +118,8 @@ const ModerationCard = ({ location }) => {
                         </div>
                     </div>
                     <InfoModal location={location} showModal={showInfoModal} handleClose={handleCloseInfoModal} />
+                    <AcceptModal location={location} showModal={showAcceptModal} handleConfirm={handleAcceptConfirm} handleClose={handleCloseAcceptModal}/>
+                    <RejectModal location={location} showModal={showRejectModal} handleConfirm={handleRejectConfirm} handleClose={handleCloseRejectModal}/>
                 </div>
             ) : (<></>)}
         </div>

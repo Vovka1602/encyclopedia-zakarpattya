@@ -8,7 +8,6 @@ import "./ContributionsPage.css";
 const ContributionsPage = () => {
     const [data, setData] = useState(null);
     const [filteredData, setFilteredData] = useState(null);
-    const [adminAccess, setAdminAccess] = useState(false);
 
     const navigate = useNavigate();
 
