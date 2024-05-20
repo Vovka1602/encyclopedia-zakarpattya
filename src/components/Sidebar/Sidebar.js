@@ -87,12 +87,12 @@ const Sidebar = ({ page }) => {
                                 {(page === "moderation") ? (
                                     <div className="navbar-elem-selected d-flex align-items-center rounded-pill px-4">
                                         <span><img className="sidebar-tab-icon-selected" src="./Images/Icons/sidebar_admin_moderation_selected.png" alt=""></img></span>
-                                        <span className="sidebar-tab-admin-selected"><a href="/">Модерація</a></span>
+                                        <span className="sidebar-tab-admin-selected"><a href="/moderation">Модерація</a></span>
                                     </div>
                                 ) : (
                                     <div className="navbar-elem d-flex align-items-center rounded-pill px-4">
                                         <span><img className="sidebar-tab-icon" src="./Images/Icons/sidebar_admin_moderation.png" alt=""></img></span>
-                                        <span className="sidebar-tab-admin"><a href="/">Модерація</a></span>
+                                        <span className="sidebar-tab-admin"><a href="/moderation">Модерація</a></span>
                                     </div>
                                 )}
                                 {(page === "administering") ? (

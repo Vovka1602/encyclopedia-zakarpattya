@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import LocationsList from "../../components/LocationsList/LocationsList";
 import Sidebar from "../../components/Sidebar/Sidebar";
 import Header from "../../components/Header/Header";
+import ModerationsList from "../../components/LocationsList/ModerationsList";
 
 const ModerationPage = () => {
     const [data, setData] = useState(null);
@@ -43,7 +44,7 @@ const ModerationPage = () => {
                 <div className="container">
                     <div className="page">
                         <div>
-                            {filteredData && <LocationsList data={filteredData} />}
+                            {filteredData && <ModerationsList data={filteredData} />}
                         </div>
                     </div>
                 </div>
