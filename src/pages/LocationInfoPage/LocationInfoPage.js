@@ -15,7 +15,7 @@ const LocationInfoPage = () => {
         if (description.length > 0) {
             setDescriptionParagraphs(description.split("\n"));
         }
-    })
+    }, [description])
 
     useEffect(() => {
         fetch("http://localhost:8000/locations/" + id)
@@ -51,14 +51,14 @@ const LocationInfoPage = () => {
                     {(location.length > 0) ? (
                         <div className="mb-5">
                             <div className="paragraph-header">
-                                <img src="../Images/Icons/location.png"></img>
+                                <img src="../Images/Icons/location.png" alt=""></img>
                                 <h2>Розташування</h2>
                             </div>
                             <p>{location}</p>
                         </div>
                     ) : (<></>)}
                     <div className="paragraph-header">
-                        <img src="../Images/Icons/info.png"></img>
+                        <img src="../Images/Icons/info.png" alt=""></img>
                         <h2>Інформація</h2>
                     </div>
                     {descriptionParagraphs && descriptionParagraphs.map((paragraph, index) => (
