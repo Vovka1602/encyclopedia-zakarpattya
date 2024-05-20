@@ -42,13 +42,10 @@ const NewContributionPage = () => {
     }
 
     const handleImageChange = (e) => {
-        const file = e.target.files[0];
-        if (file) {
-            const reader = new FileReader();
-            reader.onload = (event) => {
-                setSelectedImage(event.target.result);
-            };
-            reader.readAsDataURL(file);
+        if (e.target.value.length > 0) {
+            setSelectedImage(e.target.value);
+        } else {
+            setSelectedImage("./Images/Locations/default.png");
         }
     };
 
@@ -75,11 +72,10 @@ const NewContributionPage = () => {
                     </div>
                     <div className='card-body'>
                         <div className="image-settings">
-                            <label className="ms-3 mb-1">Виберіть фото локації</label>
+                            <label className="ms-3 mb-1">Додайте фото локації</label>
                             <input
                                 required
-                                type='file'
-                                accept='image/*'
+                                placeholder="Додайте URL-адресу зображення"
                                 className='form-control mt-1 mb-2'
                                 onChange={handleImageChange}
                             />
