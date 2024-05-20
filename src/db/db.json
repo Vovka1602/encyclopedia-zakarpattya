@@ -54,7 +54,7 @@
       "status": "accepted"
     },
     {
-      "id": "3",
+      "id": "3a56",
       "name": "Невицький замок",
       "image": "./Images/Locations/nevytsky_1.jpg",
       "users_liked": [],
@@ -62,7 +62,7 @@
       "location_short": "с. Невицьке",
       "description_short": "Середньовічний замок з видом на річку Уж",
       "author": "user",
-      "status": "accepted"
+      "status": "pending"
     },
     {
       "id": "6a03",

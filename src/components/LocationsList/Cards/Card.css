@@ -107,3 +107,13 @@
     margin-left: 2px;
     margin-right: 8px;
 }
+
+.card-content .contribution-id {
+    color: rgb(170, 175, 190);
+    background-color: rgba(100, 105, 120, 0.3);
+    padding-top: 2px;
+    padding-bottom: 4px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 12px;
+}

@@ -1,10 +1,12 @@
 import "./Card.css";
 import "../../Buttons.css";
 import { useState } from "react";
+import InfoModal from "../../Modals/InfoModal";
 
 const ContributionCard = ({ location }) => {
     const username = sessionStorage.getItem("username");
     const [isVisible, setVisible] = useState(true);
+    const [showInfoModal, setShowInfoModal] = useState(false);
 
     const handleDeleteClick = () => {
         let index = location.users_liked.indexOf(username);
@@ -18,6 +20,14 @@ const ContributionCard = ({ location }) => {
         });
     }
 
+    const handleInfoClick = () => {
+        setShowInfoModal(true);
+    }
+
+    const handleCloseInfoModal = () => {
+        setShowInfoModal(false);
+    }
+
     return (
         <div>
             {isVisible ? (
@@ -26,8 +36,10 @@ const ContributionCard = ({ location }) => {
                         <img className="card-image" src={location.image} alt={location.name}></img>
                     </div>
                     <div className="card-content">
-                        <h1>{location.name}</h1>
-                        <h4>{location.description_short}</h4>
+                        <div className="card-content-elem mt-1">
+                            <h1 className="contribution-id mt-3">#{location.id}</h1>
+                        </div>
+                        <h2>{location.name}</h2>
                         <div className="d-flex mt-3">
                             <h3 className="me-3">Статус:</h3>
                             {(location.status === "accepted") ? (
@@ -56,19 +68,18 @@ const ContributionCard = ({ location }) => {
                                     </div>
                                 </div>
                             </button>
-                            <a href={"/locationinfo/" + location.id}>
-                                <button className="button-blue">
-                                    <div className="button-content">
-                                        <div className="button-icon">
-                                            <img src="./Images/Icons/info_blue.png" alt=""></img>
-                                            <img className="img-hover" src="./Images/Icons/info_black.png" alt=""></img>
-                                        </div>
-                                        <div className="button-label">Детальніше</div>
+                            <button className="button-blue" onClick={handleInfoClick}>
+                                <div className="button-content">
+                                    <div className="button-icon">
+                                        <img src="./Images/Icons/info_blue.png" alt=""></img>
+                                        <img className="img-hover" src="./Images/Icons/info_black.png" alt=""></img>
                                     </div>
-                                </button>
-                            </a>
+                                    <div className="button-label">Детальніше</div>
+                                </div>
+                            </button>
                         </div>
                     </div>
+                    <InfoModal location={location} showModal={showInfoModal} handleClose={handleCloseInfoModal} />
                 </div>
             ) : (<></>)}
         </div>

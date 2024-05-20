@@ -1,10 +1,22 @@
 import "./Card.css";
 import "../../Buttons.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import InfoModal from "../../Modals/InfoModal";
 
 const ModerationCard = ({ location }) => {
     const [isVisible, setVisible] = useState(true);
+    const [showInfoModal, setShowInfoModal] = useState(false);
+    const [authorAvatar, setAuthorAvatar] = useState("images/avatars/1.png")
 
+    useEffect(() => {
+        fetch("http://localhost:8000/users/" + location.author)
+            .then(res => res.json())
+            .then((userdata) => {
+                console.log(userdata);
+                setAuthorAvatar(userdata.avatar);
+            })
+    }, [])
+    
     const handleAcceptClick = () => {
         location.status = "accepted";
         fetch("http://localhost:8000/locations/" + location.id, {
@@ -15,6 +27,14 @@ const ModerationCard = ({ location }) => {
             console.log(res);
             setVisible(false);
         })
+    }
+
+    const handleInfoClick = () => {
+        setShowInfoModal(true);
+    }
+
+    const handleCloseInfoModal = () => {
+        setShowInfoModal(false);
     }
 
     const handleRejectClick = () => {
@@ -37,26 +57,15 @@ const ModerationCard = ({ location }) => {
                         <img className="card-image" src={location.image} alt={location.name}></img>
                     </div>
                     <div className="card-content">
-                        <h1>{location.name}</h1>
-                        <h4>{location.description_short}</h4>
-                        <div className="card-content-row mt-1">
-                            <div className="card-content-elem">
-                                <img src="./Images/Icons/card_location.png" alt=""></img>
-                                <h3 className="card-location">{location.location_short}</h3>
-                            </div>
-                            {(location.ticket_price === 0) ? (
-                                <div className="card-content-elem">
-                                    <img src="./Images/Icons/card_ticket_free.png" alt=""></img>
-                                    <h3 className="price-free">Безкоштовно</h3>
-                                </div>
-                            ) : (
-                                <div className="card-content-elem">
-                                    <img src="./Images/Icons/card_ticket.png" alt=""></img>
-                                    <h3 className="price">Від {location.ticket_price} ₴</h3>
-                                </div>
-                            )}
+                        <div className="card-content-elem mt-1">
+                            <h1 className="contribution-id mt-3">#{location.id}</h1>
                         </div>
-                        <h3>Автор: {location.author}</h3>
+                        <h2>{location.name}</h2>
+                        <div className="card-content-elem">
+                            <h3>Автор:</h3>
+                            <img className="rounded-circle" src={authorAvatar}></img>
+                            <h3>{location.author}</h3>
+                        </div>
                         <div className="button-panel">
                             <button className="button-red" onClick={handleRejectClick}>
                                 <div className="button-content">
@@ -76,7 +85,7 @@ const ModerationCard = ({ location }) => {
                                     <div className="button-label">Прийняти</div>
                                 </div>
                             </button>
-                            <button className="button-blue">
+                            <button className="button-blue" onClick={handleInfoClick}>
                                 <div className="button-content">
                                     <div className="button-icon">
                                         <img src="./Images/Icons/info_blue.png" alt=""></img>
@@ -86,6 +95,7 @@ const ModerationCard = ({ location }) => {
                             </button>
                         </div>
                     </div>
+                    <InfoModal location={location} showModal={showInfoModal} handleClose={handleCloseInfoModal} />
                 </div>
             ) : (<></>)}
         </div>
