@@ -89,16 +89,16 @@ const NewContributionPage = () => {
                         />
                         <input
                             required
-                            className='form-control'
-                            onChange={handleTicketPriceChange}
-                            placeholder='Мінімальна ціна квитка (0 - безкоштовно)'
-                        />
-                        <input
-                            required
                             className='form-control mb-2 mt-2'
                             value={locationShort}
                             onChange={e => setShortLocation(e.target.value)}
                             placeholder='Населений пункт або район, де знаходиться локація'
+                        />
+                        <input
+                            required
+                            className='form-control'
+                            onChange={handleTicketPriceChange}
+                            placeholder='Мінімальна ціна квитка (0 - безкоштовно)'
                         />
                         <input
                             required
