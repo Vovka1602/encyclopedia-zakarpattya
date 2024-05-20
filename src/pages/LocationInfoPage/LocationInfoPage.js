@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "./LocationInfoPage.css";
+import GoogleMapsApi from "../../components/GoogleMapsApi/GoogleMapsApi";
+import { useJsApiLoader } from "@react-google-maps/api";
 
 const LocationInfoPage = () => {
     const { id } = useParams();
+    const mapsApiKey = process.env.GOOGLE_MAPS_API_KEY;
 
     const [title, setTitle] = useState("");
     const [location, setLocation] = useState("");
@@ -15,7 +18,12 @@ const LocationInfoPage = () => {
         if (description.length > 0) {
             setDescriptionParagraphs(description.split("\n"));
         }
-    }, [description])
+    }, [description]);
+
+    const { isLoaded } = useJsApiLoader({
+        id: 'google-map-script',
+        googleMapsApiKey: "AIzaSyDksAbU8xH41C0A5zSOusyWVYpnXC0cl5c"
+    })
 
     useEffect(() => {
         fetch("http://localhost:8000/locations/" + id)
@@ -55,6 +63,13 @@ const LocationInfoPage = () => {
                                 <h2>Розташування</h2>
                             </div>
                             <p>{location}</p>
+                            <div className="google-maps-container">
+                                {isLoaded ? (
+                                    <GoogleMapsApi />
+                                ) : (
+                                    <h2>Завантаження карти...</h2>
+                                )}
+                            </div>
                         </div>
                     ) : (<></>)}
                     <div className="paragraph-header">
