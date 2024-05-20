@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import LocationsList from "../../components/LocationsList/LocationsList";
 import Sidebar from "../../components/Sidebar/Sidebar";
 import Header from "../../components/Header/Header";
 import ModerationsList from "../../components/LocationsList/ModerationsList";
@@ -15,6 +14,14 @@ const ModerationPage = () => {
         let username = sessionStorage.getItem("username");
         if (username === '' || username === null) {
             navigate('/welcome');
+        } else {
+            fetch("http://localhost:8000/users/" + username)
+                .then(res => res.json())
+                .then(user => {
+                    if (user.admin_access === false) {
+                        navigate("/");
+                    }
+                })
         }
     }, [navigate]);
 
@@ -33,7 +40,7 @@ const ModerationPage = () => {
         }
     }, [data]);
 
-    return ( 
+    return (
         <div className="row">
             <title>Модерація</title>
             <div className="col-3 px-0">
@@ -52,5 +59,5 @@ const ModerationPage = () => {
         </div>
     );
 }
- 
+
 export default ModerationPage;
