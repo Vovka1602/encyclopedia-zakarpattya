@@ -2,12 +2,16 @@ import React, { useState, useCallback } from "react";
 import { GoogleMap, Marker, useJsApiLoader } from "@react-google-maps/api";
 
 const GoogleMapsApi = ({center}) => {
+    const [map, setMap] = useState(null);
+
     const { isLoaded } = useJsApiLoader({
         id: 'google-map-script',
         googleMapsApiKey: 'AIzaSyDksAbU8xH41C0A5zSOusyWVYpnXC0cl5c'
     });
 
-    const [map, setMap] = useState(null);
+    useState(() => {
+        console.log(map);
+    }, [map]);
 
     const containerStyle = {
         width: '100%',

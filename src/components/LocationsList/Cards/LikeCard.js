@@ -54,7 +54,6 @@ const LikeCard = ({ location }) => {
                                         <img src="./Images/Icons/trashbin_gray.png" alt=""></img>
                                         <img className="img-hover" src="./Images/Icons/trashbin_black.png" alt=""></img>
                                     </div>
-
                                 </div>
                             </button>
                             <a href={"/locationinfo/" + location.id}>

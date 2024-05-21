@@ -36,6 +36,7 @@ const AdministeringPage = () => {
     useEffect(() => {
         if (data !== null) {
             let filtered = data.filter(location => location.status === "accepted");
+            filtered.reverse();
             setFilteredData(filtered);
         }
     }, [data]);

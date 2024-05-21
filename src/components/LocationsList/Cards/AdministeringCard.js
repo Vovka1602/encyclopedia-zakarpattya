@@ -1,10 +1,7 @@
 import "./Card.css";
 import "../../Buttons.css";
-import { useEffect, useState } from "react";
 
 const AdministeringCard = ({ location }) => {
-    const username = sessionStorage.getItem("username");
-
     return (
         <div className="card-container">
             <div className="card-image">
@@ -31,6 +28,23 @@ const AdministeringCard = ({ location }) => {
                     )}
                 </div>
                 <div className="button-panel">
+                    <button className="button-gray">
+                        <div className="button-content">
+                            <div className="button-icon">
+                                <img src="./Images/Icons/trashbin_gray.png" alt=""></img>
+                                <img className="img-hover" src="./Images/Icons/trashbin_black.png" alt=""></img>
+                            </div>
+                        </div>
+                    </button>
+                    <button className="button-yellow">
+                        <div className="button-content">
+                            <div className="button-icon">
+                                <img src="./Images/Icons/pencil_yellow.png" alt=""></img>
+                                <img className="img-hover" src="./Images/Icons/pencil_black.png" alt=""></img>
+                            </div>
+                            <div className="button-label">Редагувати</div>
+                        </div>
+                    </button>
                     <a href={"/locationinfo/" + location.id}>
                         <button className="button-blue">
                             <div className="button-content">
@@ -47,5 +61,5 @@ const AdministeringCard = ({ location }) => {
         </div>
     );
 }
- 
+
 export default AdministeringCard;
