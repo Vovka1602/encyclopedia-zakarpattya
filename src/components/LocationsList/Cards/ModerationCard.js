@@ -4,13 +4,15 @@ import { useEffect, useState } from "react";
 import InfoModal from "../../Modals/InfoModal";
 import AcceptModal from "../../Modals/AcceptModal";
 import RejectModal from "../../Modals/RejectModal";
+import GoogleMapsModal from "../../Modals/GoogleMapsModal";
 
 const ModerationCard = ({ location }) => {
     const [isVisible, setVisible] = useState(true);
     const [showInfoModal, setShowInfoModal] = useState(false);
     const [showAcceptModal, setShowAcceptModal] = useState(false);
     const [showRejectModal, setShowRejectModal] = useState(false);
-    const [authorAvatar, setAuthorAvatar] = useState("images/avatars/1.png")
+    const [authorAvatar, setAuthorAvatar] = useState("images/avatars/1.png");
+    const [showGoogleMapsModal, setShowGoogleMapsModal] = useState(false);
 
     useEffect(() => {
         fetch("http://localhost:8000/users/" + location.author)
@@ -20,7 +22,7 @@ const ModerationCard = ({ location }) => {
                 setAuthorAvatar(userdata.avatar);
             })
     }, [location.author])
-    
+
     const handleAcceptConfirm = () => {
         location.status = "accepted";
         fetch("http://localhost:8000/locations/" + location.id, {
@@ -71,6 +73,14 @@ const ModerationCard = ({ location }) => {
         setShowRejectModal(false);
     }
 
+    const handleLocationClick = () => {
+        setShowGoogleMapsModal(true);
+    }
+
+    const handleCloseGoogleMapsModal = () => {
+        setShowGoogleMapsModal(false);
+    }
+
     return (
         <div>
             {isVisible ? (
@@ -81,8 +91,12 @@ const ModerationCard = ({ location }) => {
                     <div className="card-content">
                         <div className="card-content-elem mt-1">
                             <h1 className="contribution-id mt-3">#{location.id}</h1>
+                            <h2 className="ms-3 mt-4">{location.name}</h2>
                         </div>
-                        <h2>{location.name}</h2>
+                        <div className="d-flex mt-2">
+                            <h3 className="me-3 mt-2">Координати: {location.coordinates.lat}, {location.coordinates.lng}</h3>
+                            <button className="btn btn-outline-primary btn-lg rounded-pill px-4 ms-3" onClick={handleLocationClick}>Карта</button>
+                        </div>
                         <div className="card-content-elem">
                             <h3>Автор:</h3>
                             <img className="rounded-circle" src={authorAvatar} alt=""></img>
@@ -118,8 +132,9 @@ const ModerationCard = ({ location }) => {
                         </div>
                     </div>
                     <InfoModal location={location} showModal={showInfoModal} handleClose={handleCloseInfoModal} />
-                    <AcceptModal location={location} showModal={showAcceptModal} handleConfirm={handleAcceptConfirm} handleClose={handleCloseAcceptModal}/>
-                    <RejectModal location={location} showModal={showRejectModal} handleConfirm={handleRejectConfirm} handleClose={handleCloseRejectModal}/>
+                    <AcceptModal location={location} showModal={showAcceptModal} handleConfirm={handleAcceptConfirm} handleClose={handleCloseAcceptModal} />
+                    <RejectModal location={location} showModal={showRejectModal} handleConfirm={handleRejectConfirm} handleClose={handleCloseRejectModal} />
+                    <GoogleMapsModal coordinates={{ "lat": location.coordinates.lat, "lng": location.coordinates.lng }} showModal={showGoogleMapsModal} handleClose={handleCloseGoogleMapsModal} />
                 </div>
             ) : (<></>)}
         </div>

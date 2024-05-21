@@ -11,3 +11,11 @@
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 20px;
 }
+
+.image-settings .d-flex {
+    width: 100%;
+}
+
+.image-settings .btn {
+    width: 500px;
+}

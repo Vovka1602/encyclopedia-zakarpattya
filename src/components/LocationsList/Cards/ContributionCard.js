@@ -2,11 +2,13 @@ import "./Card.css";
 import "../../Buttons.css";
 import { useState } from "react";
 import InfoModal from "../../Modals/InfoModal";
+import GoogleMapsModal from "../../Modals/GoogleMapsModal";
 
 const ContributionCard = ({ location }) => {
     const username = sessionStorage.getItem("username");
     const [isVisible, setVisible] = useState(true);
     const [showInfoModal, setShowInfoModal] = useState(false);
+    const [showGoogleMapsModal, setShowGoogleMapsModal] = useState(false);
 
     const handleDeleteClick = () => {
         let index = location.users_liked.indexOf(username);
@@ -28,6 +30,14 @@ const ContributionCard = ({ location }) => {
         setShowInfoModal(false);
     }
 
+    const handleLocationClick = () => {
+        setShowGoogleMapsModal(true);
+    }
+
+    const handleCloseGoogleMapsModal = () => {
+        setShowGoogleMapsModal(false);
+    }
+
     return (
         <div>
             {isVisible ? (
@@ -38,9 +48,13 @@ const ContributionCard = ({ location }) => {
                     <div className="card-content">
                         <div className="card-content-elem mt-1">
                             <h1 className="contribution-id mt-3">#{location.id}</h1>
+                            <h2 className="ms-3 mt-4">{location.name}</h2>
                         </div>
-                        <h2>{location.name}</h2>
-                        <div className="d-flex mt-3">
+                        <div className="d-flex mt-2">
+                            <h3 className="me-3 mt-2">Координати: {location.coordinates.lat}, {location.coordinates.lng}</h3>
+                            <button className="btn btn-outline-primary btn-lg rounded-pill px-4 ms-3" onClick={handleLocationClick}>Карта</button>
+                        </div>
+                        <div className="d-flex mt-2">
                             <h3 className="me-3">Статус:</h3>
                             {(location.status === "accepted") ? (
                                 <div className="d-flex">
@@ -80,6 +94,7 @@ const ContributionCard = ({ location }) => {
                         </div>
                     </div>
                     <InfoModal location={location} showModal={showInfoModal} handleClose={handleCloseInfoModal} />
+                    <GoogleMapsModal coordinates={{ "lat": location.coordinates.lat, "lng": location.coordinates.lng }} showModal={showGoogleMapsModal} handleClose={handleCloseGoogleMapsModal}/>
                 </div>
             ) : (<></>)}
         </div>

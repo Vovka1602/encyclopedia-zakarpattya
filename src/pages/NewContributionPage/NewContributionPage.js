@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import PreviewCard from "../../components/LocationsList/Cards/PreviewCard";
 import "./NewContributionPage.css";
+import GoogleMapsModal from "../../components/Modals/GoogleMapsModal";
 
 const NewContributionPage = () => {
     const [name, setName] = useState("");
@@ -9,7 +10,10 @@ const NewContributionPage = () => {
     const [locationShort, setShortLocation] = useState("");
     const [descriptionShort, setShortDescription] = useState("");
     const [selectedImage, setSelectedImage] = useState("./Images/Locations/default.png");
+    const [latitude, setLatitude] = useState(null);
+    const [longitude, setLongitude] = useState(null);
     const [location, setLocation] = useState(null);
+    const [showGoogleMapsModal, setShowGoogleMapsModal] = useState(false);
 
     const navigate = useNavigate();
 
@@ -20,11 +24,18 @@ const NewContributionPage = () => {
             "users_liked": [],
             "ticket_price": ticketPrice,
             "location_short": locationShort,
+            "location": "",
             "description_short": descriptionShort,
+            "description": "",
+            "photos": [selectedImage],
+            "coordinates": {
+                "lat": latitude,
+                "lng": longitude
+            },
             "author": sessionStorage.getItem("username"),
             "status": "pending"
         });
-    }, [name, selectedImage, ticketPrice, descriptionShort, locationShort])
+    }, [name, selectedImage, ticketPrice, descriptionShort, locationShort, latitude, longitude])
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -60,6 +71,36 @@ const NewContributionPage = () => {
         }
     };
 
+    const handleLatitudeChange = (e) => {
+        if (e.target.value === "") {
+            setLatitude(null);
+        } else {
+            let res = parseFloat(e.target.value);
+            if (!isNaN(res)) {
+                setLatitude(res);
+            }
+        }
+    }
+
+    const handleLongitudeChange = (e) => {
+        if (e.target.value === "") {
+            setLongitude(null);
+        } else {
+            let res = parseFloat(e.target.value);
+            if (!isNaN(res)) {
+                setLongitude(res);
+            }
+        }
+    }
+
+    const handleLocationClick = () => {
+        setShowGoogleMapsModal(true);
+    }
+
+    const handleCloseGoogleMapsModal = () => {
+        setShowGoogleMapsModal(false);
+    }
+
     return (
         <div className='container'>
             <title>Нова пропозиція</title>
@@ -79,6 +120,24 @@ const NewContributionPage = () => {
                                 className='form-control mt-1 mb-2'
                                 onChange={handleImageChange}
                             />
+                        </div>
+                        <div className="image-settings">
+                            <label className="ms-3 mb-1">Вкажіть координати місця</label>
+                            <div className="d-flex">
+                                <input
+                                    required
+                                    className='form-control'
+                                    onChange={handleLatitudeChange}
+                                    placeholder='Широта'
+                                />
+                                <input
+                                    required
+                                    className='form-control ms-2'
+                                    onChange={handleLongitudeChange}
+                                    placeholder='Довгота'
+                                />
+                                <button className="btn btn-primary ms-3" onClick={handleLocationClick}>Показати карту</button>
+                            </div>
                         </div>
                         <input
                             required
@@ -113,6 +172,7 @@ const NewContributionPage = () => {
                     </div>
                 </div>
             </form>
+            <GoogleMapsModal coordinates={{ "lat": latitude, "lng": longitude }} showModal={showGoogleMapsModal} handleClose={handleCloseGoogleMapsModal} />
         </div>
     );
 }

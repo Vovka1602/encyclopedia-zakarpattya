@@ -4,7 +4,7 @@ import { GoogleMap, Marker, useJsApiLoader } from "@react-google-maps/api";
 const GoogleMapsApi = ({center}) => {
     const { isLoaded } = useJsApiLoader({
         id: 'google-map-script',
-        googleMapsApiKey: 'AIzaSyDksAbU8xH41C0A5zSOusyWVYpnXC0cl5c' // Вставте ваш API-ключ сюди
+        googleMapsApiKey: 'AIzaSyDksAbU8xH41C0A5zSOusyWVYpnXC0cl5c'
     });
 
     const [map, setMap] = useState(null);
@@ -12,7 +12,7 @@ const GoogleMapsApi = ({center}) => {
     const containerStyle = {
         width: '100%',
         maxWidth: '800px',
-        height: '25vw',
+        height: '24vw',
         borderRadius: '10px',
         border: "3px solid rgba(250, 250, 250, 0.5)"
     };

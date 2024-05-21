@@ -23,7 +23,7 @@ const LocationInfoPage = () => {
     const { isLoaded } = useJsApiLoader({
         id: 'google-map-script',
         googleMapsApiKey: "AIzaSyDksAbU8xH41C0A5zSOusyWVYpnXC0cl5c"
-    })
+    });
 
     useEffect(() => {
         fetch("http://localhost:8000/locations/" + id)
@@ -57,7 +57,7 @@ const LocationInfoPage = () => {
             <h1 className="mt-4">{title}</h1>
             <div className="row mt-4">
                 <div className="col-8 px-5 mt-4">
-                    {(location.length > 0) ? (
+                    {((location.length > 0) || (location.coordinates !== null)) ? (
                         <div className="mb-5">
                             <div className="paragraph-header">
                                 <img src="../Images/Icons/location.png" alt=""></img>
@@ -66,17 +66,19 @@ const LocationInfoPage = () => {
                             <p>{location}</p>
                             {coordinates && <div className="google-maps-container">
                                 {isLoaded ? (
-                                    <GoogleMapsApi center={coordinates}/>
+                                    <GoogleMapsApi center={coordinates} />
                                 ) : (
                                     <h2>Завантаження карти...</h2>
                                 )}
                             </div>}
                         </div>
                     ) : (<></>)}
-                    <div className="paragraph-header">
-                        <img src="../Images/Icons/info.png" alt=""></img>
-                        <h2>Інформація</h2>
-                    </div>
+                    {(description.length > 0) ? (
+                        <div className="paragraph-header">
+                            <img src="../Images/Icons/info.png" alt=""></img>
+                            <h2>Інформація</h2>
+                        </div>
+                    ) : (<></>)}
                     {descriptionParagraphs && descriptionParagraphs.map((paragraph, index) => (
                         <p key={index}>
                             {paragraph}
