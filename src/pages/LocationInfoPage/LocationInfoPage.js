@@ -6,10 +6,10 @@ import { useJsApiLoader } from "@react-google-maps/api";
 
 const LocationInfoPage = () => {
     const { id } = useParams();
-    const mapsApiKey = process.env.GOOGLE_MAPS_API_KEY;
 
     const [title, setTitle] = useState("");
     const [location, setLocation] = useState("");
+    const [coordinates, setCoordinates] = useState(null);
     const [description, setDescription] = useState("");
     const [descriptionParagraphs, setDescriptionParagraphs] = useState([]);
     const [photos, setPhotos] = useState(null);
@@ -38,6 +38,7 @@ const LocationInfoPage = () => {
             .then((location) => {
                 setTitle(location.name);
                 setLocation(location.location);
+                setCoordinates(location.coordinates);
                 setDescription(location.description);
                 setPhotos(location.photos);
             })
@@ -63,13 +64,13 @@ const LocationInfoPage = () => {
                                 <h2>Розташування</h2>
                             </div>
                             <p>{location}</p>
-                            <div className="google-maps-container">
+                            {coordinates && <div className="google-maps-container">
                                 {isLoaded ? (
-                                    <GoogleMapsApi />
+                                    <GoogleMapsApi center={coordinates}/>
                                 ) : (
                                     <h2>Завантаження карти...</h2>
                                 )}
-                            </div>
+                            </div>}
                         </div>
                     ) : (<></>)}
                     <div className="paragraph-header">

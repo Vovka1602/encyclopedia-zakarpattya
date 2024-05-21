@@ -1,45 +1,42 @@
-import React, { useState } from "react";
-import { GoogleMap } from "@react-google-maps/api";
+import React, { useState, useCallback } from "react";
+import { GoogleMap, Marker, useJsApiLoader } from "@react-google-maps/api";
 
-const GoogleMapsApi = () => {
+const GoogleMapsApi = ({center}) => {
+    const { isLoaded } = useJsApiLoader({
+        id: 'google-map-script',
+        googleMapsApiKey: 'AIzaSyDksAbU8xH41C0A5zSOusyWVYpnXC0cl5c' // Вставте ваш API-ключ сюди
+    });
+
     const [map, setMap] = useState(null);
 
     const containerStyle = {
         width: '100%',
         maxWidth: '800px',
-        height: '400px',
-        borderRadius: '16px',
+        height: '25vw',
+        borderRadius: '10px',
+        border: "3px solid rgba(250, 250, 250, 0.5)"
     };
 
-    const center = {
-        lat: -3.745,
-        lng: -38.523
-    };
+    const onLoad = useCallback(function callback(map) {
+        setMap(map);
+    }, []);
 
-    const onLoad = React.useCallback(function callback(map) {
-        // This is just an example of getting and using the map instance!!! don't just blindly copy!
-        const bounds = new window.google.maps.LatLngBounds(center);
-        map.fitBounds(bounds);
-        setMap(map)
-    }, [center])
+    const onUnmount = useCallback(function callback(map) {
+        setMap(null);
+    }, []);
 
-    const onUnmount = React.useCallback(function callback(map) {
-        setMap(null)
-    }, [])
-
-
-    return (
+    return isLoaded ? (
         <GoogleMap
             mapContainerStyle={containerStyle}
             center={center}
-            zoom={10}
+            zoom={16}
             onLoad={onLoad}
             onUnmount={onUnmount}
+            mapTypeId="hybrid"
         >
-            { /* Child components, such as markers, info windows, etc. */}
-            <></>
+            <Marker position={center} />
         </GoogleMap>
-    );
+    ) : (<></>);
 }
 
 export default GoogleMapsApi;
