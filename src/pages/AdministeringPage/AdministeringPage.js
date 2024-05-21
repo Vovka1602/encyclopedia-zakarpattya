@@ -42,12 +42,12 @@ const AdministeringPage = () => {
 
     return ( 
         <div className="row">
-            <title>Головна</title>
+            <title>Адміністрування</title>
             <div className="col-3 px-0">
-                <Sidebar page={"home"} />
+                <Sidebar page={"administering"} />
             </div>
             <div className="col-8 px-0">
-                <Header title="Головна" />
+                <Header title="Адміністрування списку локацій" />
                 <div className="container">
                     <div className="page">
                         <div>
