@@ -5,15 +5,11 @@ import InfoModal from "../../Modals/InfoModal";
 import GoogleMapsModal from "../../Modals/GoogleMapsModal";
 
 const ContributionCard = ({ location }) => {
-    const username = sessionStorage.getItem("username");
     const [isVisible, setVisible] = useState(true);
     const [showInfoModal, setShowInfoModal] = useState(false);
     const [showGoogleMapsModal, setShowGoogleMapsModal] = useState(false);
 
     const handleDeleteClick = () => {
-        let index = location.users_liked.indexOf(username);
-        location.users_liked.splice(index, 1);
-        console.log(location.users_liked);
         fetch("http://localhost:8000/locations/" + location.id, {
             method: "DELETE"
         }).then((res) => {
