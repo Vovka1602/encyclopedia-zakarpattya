@@ -51,15 +51,17 @@ const AdministeringCard = ({ location }) => {
                                     </div>
                                 </div>
                             </button>
-                            <button className="button-yellow">
-                                <div className="button-content">
-                                    <div className="button-icon">
-                                        <img src="./Images/Icons/pencil_yellow.png" alt=""></img>
-                                        <img className="img-hover" src="./Images/Icons/pencil_black.png" alt=""></img>
+                            <a href={"/editlocation/" + location.id}>
+                                <button className="button-yellow">
+                                    <div className="button-content">
+                                        <div className="button-icon">
+                                            <img src="./Images/Icons/pencil_yellow.png" alt=""></img>
+                                            <img className="img-hover" src="./Images/Icons/pencil_black.png" alt=""></img>
+                                        </div>
+                                        <div className="button-label">Редагувати</div>
                                     </div>
-                                    <div className="button-label">Редагувати</div>
-                                </div>
-                            </button>
+                                </button>
+                            </a>
                             <a href={"/locationinfo/" + location.id}>
                                 <button className="button-blue">
                                     <div className="button-content">

@@ -11,6 +11,7 @@ import ContributionsPage from './pages/ContributionsPage/ContributionsPage';
 import NewContributionPage from './pages/NewContributionPage/NewContributionPage';
 import ModerationPage from './pages/ModerationPage/ModerationPage';
 import AdministeringPage from './pages/AdministeringPage/AdministeringPage';
+import EditLocationPage from './pages/EditLocationPage/EditLocationPage';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
                 <Route path='/signup' element={ <SignupPage/> }></Route>
                 <Route path='/login' element={ <LoginPage/> }></Route>
                 <Route path='/locationinfo/:id' element={ <LocationInfoPage/> }></Route>
+                <Route path='/editlocation/:id' element={ <EditLocationPage/> }></Route>
             </Routes>
         </BrowserRouter>
     </div>
