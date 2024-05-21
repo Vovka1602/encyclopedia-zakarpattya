@@ -10,6 +10,7 @@ import LikesPage from './pages/LikesPage/LikesPage';
 import ContributionsPage from './pages/ContributionsPage/ContributionsPage';
 import NewContributionPage from './pages/NewContributionPage/NewContributionPage';
 import ModerationPage from './pages/ModerationPage/ModerationPage';
+import AdministeringPage from './pages/AdministeringPage/AdministeringPage';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
                 <Route path='/contributions' element={ <ContributionsPage/> }></Route>
                 <Route path='/newcontribution' element={ <NewContributionPage/> }></Route>
                 <Route path='/moderation' element={ <ModerationPage/> }></Route>
+                <Route path='/administering' element={ <AdministeringPage/> }></Route>
                 <Route path='/signup' element={ <SignupPage/> }></Route>
                 <Route path='/login' element={ <LoginPage/> }></Route>
                 <Route path='/locationinfo/:id' element={ <LocationInfoPage/> }></Route>
