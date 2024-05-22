@@ -1,0 +1,84 @@
+.profile-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.profile-container .editprofile {
+    margin-right: 30px;
+    margin-left: auto;
+    display: flex;
+}
+
+.profile-container button {
+    margin-right: 30px;
+    margin-left: auto;
+    height: 70px;
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.profile-info h2 {
+    font-size: 48px;
+}
+
+.profile-info h3 {
+    font-size: 36px;
+    color: rgb(140, 140, 140);
+}
+
+.profile-info h4 {
+    font-size: 38px;
+    color: rgb(240, 240, 240);
+}
+
+.profile-info p {
+    font-size: 36px;
+}
+
+.profile-info .email {
+    margin-top: 20px;
+    color: white;
+}
+
+.profile-info .likes {
+    margin-top: 25px;
+    color: rgb(242, 75, 75);
+}
+
+.profile-info .contributions {
+    color: rgb(211, 190, 72);
+}
+
+.profile-info img {
+    width: 50px;
+    margin-right: 20px;
+    margin-bottom: 5px;
+}
+
+.avatar-container {
+    margin: 50px;
+}
+
+.avatar-container img {
+    width: 250px;
+    height: 250px;
+    border: 10px solid rgba(240, 240, 240, 0.5);
+}
+
+.profile-info .admin-sign {
+    color: rgb(112, 164, 80);
+    background-color: rgba(79, 133, 40, 0.3);
+    font-size: 32px;
+    font-weight: 400;
+    padding-top: 8px;
+    padding-bottom: 12px;
+    padding-left: 16px;
+    padding-right: 16px;
+    border-radius: 14px;
+}

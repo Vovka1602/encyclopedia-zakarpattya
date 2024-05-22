@@ -61,7 +61,7 @@ const LocationInfoPage = () => {
                 <div className="col-8 px-5 mt-4">
                     {((location.length > 0) || (location.coordinates !== null)) ? (
                         <div className="mb-5">
-                            <div className="paragraph-header">
+                            <div className="paragraph-header mt-3">
                                 <img src="../Images/Icons/location.png" alt=""></img>
                                 <h2>Розташування</h2>
                             </div>

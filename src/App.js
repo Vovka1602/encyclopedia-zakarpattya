@@ -13,6 +13,7 @@ import ModerationPage from './pages/ModerationPage/ModerationPage';
 import AdministeringPage from './pages/AdministeringPage/AdministeringPage';
 import EditLocationPage from './pages/EditLocationPage/EditLocationPage';
 import NewLocationPage from './pages/NewLocationPage/NewLocationPage';
+import ProfilePage from './pages/ProfilePage/ProfilePage';
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
                 <Route path='/newlocation' element={ <NewLocationPage/> }></Route>
                 <Route path='/signup' element={ <SignupPage/> }></Route>
                 <Route path='/login' element={ <LoginPage/> }></Route>
+                <Route path='/myprofile' element={ <ProfilePage/> }></Route>
                 <Route path='/locationinfo/:id' element={ <LocationInfoPage/> }></Route>
                 <Route path='/editlocation/:id' element={ <EditLocationPage/> }></Route>
             </Routes>

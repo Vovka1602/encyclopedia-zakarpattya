@@ -63,12 +63,12 @@ const Sidebar = ({ page }) => {
                         {(page === "myprofile") ? (
                             <div className="navbar-elem-selected d-flex align-items-center rounded-pill px-4">
                                 <span><img className="sidebar-tab-icon-selected" src="./Images/Icons/sidebar_myprofile_selected.png" alt=""></img></span>
-                                <span className="sidebar-tab-selected"><a href="/">Профіль</a></span>
+                                <span className="sidebar-tab-selected"><a href="/myprofile">Профіль</a></span>
                             </div>
                         ) : (
                             <div className="navbar-elem d-flex align-items-center rounded-pill px-4">
                                 <span><img className="sidebar-tab-icon" src="./Images/Icons/sidebar_myprofile.png" alt=""></img></span>
-                                <span className="sidebar-tab admin"><a href="/">Профіль</a></span>
+                                <span className="sidebar-tab admin"><a href="/myprofile">Профіль</a></span>
                             </div>
                         )}
                         {adminAccess ? (
