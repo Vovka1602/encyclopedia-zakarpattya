@@ -29,6 +29,11 @@ const InfoModal = ({ location, showModal, handleClose }) => {
                             <label>Від {location.ticket_price} ₴</label>
                         )}
                     </p>
+                    {(location.comment.length > 0) ? (
+                        <p>
+                            <label><strong>Коментар адміністратора: </strong>{location.comment}</label>
+                        </p>
+                    ) : (<></>)}
                 </Modal.Body>
             </Modal>
         </div>

@@ -33,7 +33,8 @@ const NewContributionPage = () => {
                 "lng": longitude
             },
             "author": sessionStorage.getItem("username"),
-            "status": "pending"
+            "status": "pending",
+            "comment": "",
         });
     }, [name, selectedImage, ticketPrice, descriptionShort, locationShort, latitude, longitude])
 
@@ -136,7 +137,7 @@ const NewContributionPage = () => {
                                     onChange={handleLongitudeChange}
                                     placeholder='Довгота'
                                 />
-                                <button className="btn btn-primary ms-3" onClick={handleLocationClick}>Показати карту</button>
+                                <button className="btn btn-primary ms-3" type="button" onClick={handleLocationClick}>Показати карту</button>
                             </div>
                         </div>
                         <input

@@ -60,17 +60,6 @@ const Sidebar = ({ page }) => {
                                 )}
                             </div>
                         ) : (<></>)}
-                        {(page === "notifications") ? (
-                            <div className="navbar-elem-selected d-flex align-items-center rounded-pill px-4">
-                                <span><img className="sidebar-tab-icon-selected" src="./Images/Icons/sidebar_notifications_selected.png" alt=""></img></span>
-                                <span className="sidebar-tab-selected"><a href="/">Сповіщення</a></span>
-                            </div>
-                        ) : (
-                            <div className="navbar-elem d-flex align-items-center rounded-pill px-4">
-                                <span><img className="sidebar-tab-icon" src="./Images/Icons/sidebar_notifications.png" alt=""></img></span>
-                                <span className="sidebar-tab"><a href="/">Сповіщення</a></span>
-                            </div>
-                        )}
                         {(page === "myprofile") ? (
                             <div className="navbar-elem-selected d-flex align-items-center rounded-pill px-4">
                                 <span><img className="sidebar-tab-icon-selected" src="./Images/Icons/sidebar_myprofile_selected.png" alt=""></img></span>

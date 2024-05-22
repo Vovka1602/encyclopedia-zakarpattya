@@ -37,6 +37,7 @@ const EditLocationPage = () => {
     const [description, setDescription] = useState("");
     const [locationData, setLocationData] = useState(null);
     const [usersLiked, setUsersLiked] = useState([]);
+    const [comment, setComment] = useState("");
 
     const [showGoogleMapsModal, setShowGoogleMapsModal] = useState(false);
 
@@ -66,6 +67,7 @@ const EditLocationPage = () => {
                 setDescription(location.description);
                 setAuthor(location.author);
                 setUsersLiked(location.users_liked);
+                setComment(location.comment);
             })
             .catch((err) => {
                 console.error(err);
@@ -131,17 +133,18 @@ const EditLocationPage = () => {
                 "lng": longitude
             },
             "author": author,
-            "status": "accepted"
+            "status": "accepted",
+            "comment": comment, 
         });
     }, [id, name, selectedImage, ticketPrice, descriptionShort, locationShort, latitude, longitude,
-        author, description, location, photos, usersLiked
+        author, description, location, photos, usersLiked, comment
     ]);
 
     useEffect(() => {
         let newPhotos = photos;
         newPhotos[0] = selectedImage;
         setPhotos(newPhotos);
-    })
+    }, [selectedImage, photos])
 
     const handleSubmit = (e) => {
         e.preventDefault();

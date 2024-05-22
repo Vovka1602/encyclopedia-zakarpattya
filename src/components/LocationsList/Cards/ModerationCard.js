@@ -23,8 +23,9 @@ const ModerationCard = ({ location }) => {
             })
     }, [location.author])
 
-    const handleAcceptConfirm = () => {
+    const handleAcceptConfirm = (message) => {
         location.status = "accepted";
+        location.comment = message;
         fetch("http://localhost:8000/locations/" + location.id, {
             method: "PUT",
             headers: { 'content-type': 'application/json' },
@@ -40,8 +41,9 @@ const ModerationCard = ({ location }) => {
         setShowAcceptModal(true)
     }
 
-    const handleRejectConfirm = () => {
+    const handleRejectConfirm = (message) => {
         location.status = "rejected";
+        location.comment = message;
         fetch("http://localhost:8000/locations/" + location.id, {
             method: "PUT",
             headers: { 'content-type': 'application/json' },

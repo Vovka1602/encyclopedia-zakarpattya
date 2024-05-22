@@ -48,7 +48,8 @@
         "lng": 22.30688
       },
       "author": "default",
-      "status": "accepted"
+      "status": "accepted",
+      "comment": ""
     },
     {
       "id": "2",
@@ -69,8 +70,9 @@
         "lat": 48.43171,
         "lng": 22.68752
       },
-      "author": "user",
-      "status": "accepted"
+      "author": "default",
+      "status": "accepted",
+      "comment": ""
     },
     {
       "id": "3a56",
@@ -90,7 +92,8 @@
         "lng": 22.40914
       },
       "author": "user",
-      "status": "pending"
+      "status": "accepted",
+      "comment": "Чудова локація!"
     },
     {
       "id": "b232",
@@ -110,27 +113,29 @@
         "lng": 23.68392
       },
       "author": "user",
-      "status": "pending"
+      "status": "pending",
+      "comment": ""
     },
     {
-      "id": "57d1",
+      "id": "4051",
       "name": "Замок Шенборнів",
       "image": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Zamok_grafiv_Shenborniv_01.jpg",
       "users_liked": [],
-      "ticket_price": 20,
+      "ticket_price": 15,
       "location_short": "с. Карпати",
       "location": "",
-      "description_short": "Розкішна оселя роду графів Шенборнів",
+      "description_short": "Розкішна оселя графів Шенборнів",
       "description": "",
       "photos": [
         "https://upload.wikimedia.org/wikipedia/commons/2/2f/Zamok_grafiv_Shenborniv_01.jpg"
       ],
       "coordinates": {
-        "lat": 48.52486,
-        "lng": 22.87452
+        "lat": 48.52484,
+        "lng": 22.87447
       },
       "author": "user",
-      "status": "accepted"
+      "status": "pending",
+      "comment": ""
     }
   ]
 }

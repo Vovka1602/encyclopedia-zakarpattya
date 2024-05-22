@@ -13,7 +13,7 @@ const AcceptModal = ({ location, showModal, handleConfirm, handleClose }) => {
     const handleConfirmClick = () => {
         if (message.length > 0) {
             console.log(message);
-            handleConfirm();
+            handleConfirm(message);
         } else {
             alert("Поле 'Повідомлення-коментар' не може бути порожнім");
         }
