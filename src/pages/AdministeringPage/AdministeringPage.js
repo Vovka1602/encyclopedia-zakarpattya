@@ -56,6 +56,21 @@ const AdministeringPage = () => {
                         </div>
                     </div>
                 </div>
+                <div className="page-bottom">
+                    <div className="button-panel d-flex justify-content-center mt-3 me-5">
+                        <a href="/newlocation">
+                            <button className="button-green">
+                                <div className="button-content">
+                                    <div className="button-icon">
+                                        <img src="Images/Icons/plus_green.png" alt=""></img>
+                                        <img className="img-hover" src="Images/Icons/plus_black.png" alt=""></img>
+                                    </div>
+                                    <div className="button-label">Нова локація</div>
+                                </div>
+                            </button>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     );

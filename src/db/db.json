@@ -34,7 +34,21 @@
         "admin",
         "user"
       ],
-      "ticket_price": 100,
+      "ticket_price": 20,
+      "ticket_prices": [
+        {
+          "for": "Дорослі",
+          "amount": 20
+        },
+        {
+          "for": "Студенти",
+          "amount": 40
+        },
+        {
+          "for": "Школярі",
+          "amount": 20
+        }
+      ],
       "location_short": "м. Ужгород",
       "location": "Замок знаходиться у центрі міста Ужгород, на честь якого був названий. Розташований на вершині Замкової гори",
       "description_short": "Вишуканий замок у серці Ужгорода",
@@ -58,7 +72,21 @@
       "users_liked": [
         "admin"
       ],
-      "ticket_price": 40,
+      "ticket_price": 50,
+      "ticket_prices": [
+        {
+          "for": "Дорослі",
+          "amount": 100
+        },
+        {
+          "for": "Студенти та пенсіонери",
+          "amount": 70
+        },
+        {
+          "for": "Діти до 14 років",
+          "amount": 20
+        }
+      ],
       "location_short": "м. Мукачево",
       "location": "Знаходиться у місті Мукачево",
       "description_short": "Неприступна фортеця Мукачева",
@@ -80,6 +108,7 @@
       "image": "https://glavcom.ua/img/article/5757/41_main-v1552088914.jpg",
       "users_liked": [],
       "ticket_price": 0,
+      "ticket_prices": [],
       "location_short": "с. Невицьке",
       "location": "",
       "description_short": "Середньовічний замок з видом на річку Уж",
@@ -101,6 +130,7 @@
       "image": "https://7chudes.in.ua/wp-content/uploads/2010/09/22829155.jpg",
       "users_liked": [],
       "ticket_price": 0,
+      "ticket_prices": [],
       "location_short": "Хустський р-н",
       "location": "",
       "description_short": "Мальовниче озеро в Карпатах",
@@ -111,27 +141,6 @@
       "coordinates": {
         "lat": 48.61681,
         "lng": 23.68392
-      },
-      "author": "user",
-      "status": "pending",
-      "comment": ""
-    },
-    {
-      "id": "4051",
-      "name": "Замок Шенборнів",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Zamok_grafiv_Shenborniv_01.jpg",
-      "users_liked": [],
-      "ticket_price": 15,
-      "location_short": "с. Карпати",
-      "location": "",
-      "description_short": "Розкішна оселя графів Шенборнів",
-      "description": "",
-      "photos": [
-        "https://upload.wikimedia.org/wikipedia/commons/2/2f/Zamok_grafiv_Shenborniv_01.jpg"
-      ],
-      "coordinates": {
-        "lat": 48.52484,
-        "lng": 22.87447
       },
       "author": "user",
       "status": "pending",

@@ -38,10 +38,26 @@ const EditLocationPage = () => {
     const [locationData, setLocationData] = useState(null);
     const [usersLiked, setUsersLiked] = useState([]);
     const [comment, setComment] = useState("");
+    const [ticketPrices, setTicketPrices] = useState([]);
 
     const [showGoogleMapsModal, setShowGoogleMapsModal] = useState(false);
 
     const navigate = useNavigate();
+
+    useEffect(() => {
+        let username = sessionStorage.getItem("username");
+        if (username === '' || username === null) {
+            navigate('/welcome');
+        } else {
+            fetch("http://localhost:8000/users/" + username)
+                .then(res => res.json())
+                .then(user => {
+                    if (user.admin_access === false) {
+                        navigate("/");
+                    }
+                })
+        }
+    }, [navigate]);
 
     useEffect(() => {
         fetch("http://localhost:8000/locations/" + id)
@@ -67,6 +83,7 @@ const EditLocationPage = () => {
                 setDescription(location.description);
                 setAuthor(location.author);
                 setUsersLiked(location.users_liked);
+                setTicketPrices(location.ticket_prices);
                 setComment(location.comment);
             })
             .catch((err) => {
@@ -123,6 +140,7 @@ const EditLocationPage = () => {
             "image": selectedImage,
             "users_liked": usersLiked,
             "ticket_price": ticketPrice,
+            "ticket_prices": ticketPrices,
             "location_short": locationShort,
             "location": location,
             "description_short": descriptionShort,

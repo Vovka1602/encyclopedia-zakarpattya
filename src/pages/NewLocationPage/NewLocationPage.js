@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import PreviewCard from "../../components/LocationsList/Cards/PreviewCard";
-import "./NewContributionPage.css";
 import GoogleMapsModal from "../../components/Modals/GoogleMapsModal";
 
-const NewContributionPage = () => {
+const NewLocationPage = () => {
     const [name, setName] = useState("");
     const [ticketPrice, setTicketPrice] = useState(null);
     const [locationShort, setShortLocation] = useState("");
@@ -25,7 +24,7 @@ const NewContributionPage = () => {
             fetch("http://localhost:8000/users/" + username)
                 .then(res => res.json())
                 .then(user => {
-                    if (user.admin_access === true) {
+                    if (user.admin_access === false) {
                         navigate("/");
                     }
                 })
@@ -49,7 +48,7 @@ const NewContributionPage = () => {
                 "lng": longitude
             },
             "author": sessionStorage.getItem("username"),
-            "status": "pending",
+            "status": "accepted",
             "comment": "",
         });
     }, [name, selectedImage, ticketPrice, descriptionShort, locationShort, latitude, longitude])
@@ -62,7 +61,7 @@ const NewContributionPage = () => {
             body: JSON.stringify(location)
         })
             .then((res) => {
-                navigate('/contributions');
+                navigate('/administering');
             })
             .catch((err) => {
                 console.error(err.message);
@@ -120,13 +119,13 @@ const NewContributionPage = () => {
 
     return (
         <div className='container'>
-            <title>Нова пропозиція</title>
+            <title>Додвання локації</title>
             {location && <PreviewCard location={location} />}
             <h2 className="fs-4 fw-normal">Попередній перегляд інформаційної картки</h2>
             <form onSubmit={handleSubmit}>
                 <div className='card mt-1' data-bs-theme='dark'>
                     <div className='card-header'>
-                        <h2>Створити нову пропозицію</h2>
+                        <h2>Додати нову локацію</h2>
                     </div>
                     <div className='card-body'>
                         <div className="image-settings">
@@ -194,4 +193,4 @@ const NewContributionPage = () => {
     );
 }
 
-export default NewContributionPage;
+export default NewLocationPage;
