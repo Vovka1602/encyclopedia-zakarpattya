@@ -13,6 +13,7 @@ const LocationInfoPage = () => {
     const [description, setDescription] = useState("");
     const [descriptionParagraphs, setDescriptionParagraphs] = useState([]);
     const [photos, setPhotos] = useState(null);
+    const [ticketPrices, setTicketPrices] = useState([]);
 
     useEffect(() => {
         if (description.length > 0) {
@@ -41,6 +42,7 @@ const LocationInfoPage = () => {
                 setCoordinates(location.coordinates);
                 setDescription(location.description);
                 setPhotos(location.photos);
+                setTicketPrices(location.ticket_prices);
             })
             .catch((err) => {
                 console.error(err);
@@ -84,6 +86,15 @@ const LocationInfoPage = () => {
                             {paragraph}
                         </p>
                     ))}
+                    {(ticketPrices.length > 0) ? (
+                        <div className="paragraph-header">
+                            <img src="../Images/Icons/prices.png" alt=""></img>
+                            <h2>Ціни квитків:</h2>
+                        </div>
+                    ) : (<></>)}
+                    {ticketPrices && ticketPrices.map((price, index) => (
+                        <p className="ms-5" key={index}>{price.for} - <strong>{price.amount} ₴</strong></p>
+                    ))};
                 </div>
                 <div className="col">
                     <div className="photos-column">
