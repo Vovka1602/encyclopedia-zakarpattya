@@ -15,14 +15,6 @@
       "email": "user@gmail.com",
       "fullname": "Користувач",
       "avatar": "./Images/Avatars/5.png"
-    },
-    {
-      "id": "vovka1602",
-      "password": "1234567",
-      "admin_access": false,
-      "email": "vovka1602@gmail.com",
-      "fullname": "Володимир",
-      "avatar": "./Images/Avatars/4.png"
     }
   ],
   "locations": [
