@@ -43,7 +43,7 @@ const AdministeringPage = () => {
 
     return ( 
         <div className="row">
-            <title>Адміністрування</title>
+            <title>Адміністрування - Енциклопедія Закарпаття</title>
             <div className="col-3 px-0">
                 <Sidebar page={"administering"} />
             </div>

@@ -31,8 +31,7 @@ const EditProfilePage = () => {
     useEffect(() => {
         let username = sessionStorage.getItem("username");
         if (username === "" || username === null) {
-            navigate("/login");
-            console.log("Login first");
+            navigate("/welcome");
         }
     }, [navigate]);
 
@@ -113,71 +112,65 @@ const EditProfilePage = () => {
     }
 
     return (
-        <html>
-            <head>
-                <title>Редагування профілю</title>
-            </head>
-            <body className='container'>
-                <div className='container'>
-                    <form onSubmit={handle_submit}>
-                        <div className='card' data-bs-theme='dark'>
-                            <div className='card-header'>
-                                <h2>Редагування облікового запису</h2>
+        <div className='container'>
+            <title>Редагування профілю</title>
+            <form onSubmit={handle_submit}>
+                <div className='card' data-bs-theme='dark'>
+                    <div className='card-header'>
+                        <h2>Редагування облікового запису</h2>
+                    </div>
+                    <div className='card-body'>
+                        <div className='avatar-settings'>
+                            <div>
+                                <h3>Аватар</h3>
+                                {avatar && <img className='rounded-circle' src={avatar} alt='selected avatar' />}
                             </div>
-                            <div className='card-body'>
-                            <div className='avatar-settings'>
-                                    <div>
-                                        <h3>Аватар</h3>
-                                        {avatar && <img className='rounded-circle' src={avatar} alt='selected avatar' />}
-                                    </div>
-                                    <div className='avatar-options'>
-                                        <h4 className='fs-5'>Виберіть зі списку:</h4>
-                                        {avatarOptions.map((avatar, index) => (
-                                            <img
-                                                key={index}
-                                                className={`avatar-option ${selectedAvatar === avatar ? 'selected' : ''}`}
-                                                src={avatar}
-                                                alt={`avatar ${index + 1}`}
-                                                onClick={() => handleAvatarOptionClick(avatar)}
-                                            />
-                                        ))}
-                                        <h4 className='fs-5'>Або</h4>
-                                        <input
-                                            type='file'
-                                            accept='image/*'
-                                            className='form-control mt-1 mb-2'
-                                            onChange={handleAvatarChange}
-                                        />
-                                    </div>
-                                </div>
+                            <div className='avatar-options'>
+                                <h4 className='fs-5'>Виберіть зі списку:</h4>
+                                {avatarOptions.map((avatar, index) => (
+                                    <img
+                                        key={index}
+                                        className={`avatar-option ${selectedAvatar === avatar ? 'selected' : ''}`}
+                                        src={avatar}
+                                        alt={`avatar ${index + 1}`}
+                                        onClick={() => handleAvatarOptionClick(avatar)}
+                                    />
+                                ))}
+                                <h4 className='fs-5'>Або</h4>
                                 <input
-                                    className='form-control mt-3'
-                                    value={editedFullname}
-                                    onChange={e => change_editedFullname(e.target.value)}
-                                    placeholder="Змінити ім'я"
+                                    type='file'
+                                    accept='image/*'
+                                    className='form-control mt-1 mb-2'
+                                    onChange={handleAvatarChange}
                                 />
-                                <input
-                                    className='form-control mt-3'
-                                    value={editedPassword}
-                                    onChange={e => change_editedPassword(e.target.value)}
-                                    type='password'
-                                    placeholder='Змінити пароль'
-                                />
-                                <input
-                                    className='form-control mt-3 mb-3'
-                                    value={editedEmail}
-                                    onChange={e => change_editedEmail(e.target.value)}
-                                    placeholder='Змінити E-Mail'
-                                />
-                            </div>
-                            <div className='card-footer'>
-                                <button className='btn btn-primary btn-lg px-5' type='submit'>Застосувати зміни</button>
                             </div>
                         </div>
-                    </form>
+                        <input
+                            className='form-control mt-3'
+                            value={editedFullname}
+                            onChange={e => change_editedFullname(e.target.value)}
+                            placeholder="Змінити ім'я"
+                        />
+                        <input
+                            className='form-control mt-3'
+                            value={editedPassword}
+                            onChange={e => change_editedPassword(e.target.value)}
+                            type='password'
+                            placeholder='Змінити пароль'
+                        />
+                        <input
+                            className='form-control mt-3 mb-3'
+                            value={editedEmail}
+                            onChange={e => change_editedEmail(e.target.value)}
+                            placeholder='Змінити E-Mail'
+                        />
+                    </div>
+                    <div className='card-footer'>
+                        <button className='btn btn-primary btn-lg px-5' type='submit'>Застосувати зміни</button>
+                    </div>
                 </div>
-            </body>
-        </html>
+            </form>
+        </div>
     )
 }
 

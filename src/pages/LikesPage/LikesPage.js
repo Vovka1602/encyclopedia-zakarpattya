@@ -34,7 +34,7 @@ const LikesPage = () => {
 
     return (
         <div className="row">
-            <title>Вподобання</title>
+            <title>Вподобання - Енциклопедія Закарпаття</title>
             <div className="col-3 px-0">
                 <Sidebar page={"likes"} />
             </div>

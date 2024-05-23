@@ -119,7 +119,7 @@ const NewLocationPage = () => {
 
     return (
         <div className='container'>
-            <title>Додвання локації</title>
+            <title>Додвання локації - Енциклопедія Закарпаття</title>
             {location && <PreviewCard location={location} />}
             <h2 className="fs-4 fw-normal">Попередній перегляд інформаційної картки</h2>
             <form onSubmit={handleSubmit}>

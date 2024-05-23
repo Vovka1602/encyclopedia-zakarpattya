@@ -13,6 +13,7 @@
 
 .side-navbar {
     position: fixed;
+    top: 50px;
     height: 80vh;
 }
 
@@ -22,6 +23,12 @@
 
 .side-navbar .btn {
     width: 86%;
+}
+
+.side-navbar .logo-container img {
+    margin-bottom: 50px;
+    width: 95%;
+    height: 120px
 }
 
 .navbar-elem {

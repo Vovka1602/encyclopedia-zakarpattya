@@ -120,7 +120,7 @@ const NewContributionPage = () => {
 
     return (
         <div className='container'>
-            <title>Нова пропозиція</title>
+            <title>Новий внесок - Енциклопедія Закарпаття</title>
             {location && <PreviewCard location={location} />}
             <h2 className="fs-4 fw-normal">Попередній перегляд інформаційної картки</h2>
             <form onSubmit={handleSubmit}>

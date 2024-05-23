@@ -42,7 +42,7 @@ const ModerationPage = () => {
 
     return (
         <div className="row">
-            <title>Модерація</title>
+            <title>Модерація - Енциклопедія Закарпаття</title>
             <div className="col-3 px-0">
                 <Sidebar page={"moderation"} />
             </div>

@@ -21,6 +21,9 @@ const Sidebar = ({ page }) => {
     return (
         <div className="side-bar">
             <div className="side-navbar ms-3">
+                <div className="logo-container">
+                    <img src="./Images/logo_large.png" alt="Logo"></img>
+                </div>
                 {(page !== "welcome") ? (
                     <div>
                         {(page === "home") ? (

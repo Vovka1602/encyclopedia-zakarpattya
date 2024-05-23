@@ -58,14 +58,14 @@ const ProfilePage = () => {
 
     return (
         <div className="row">
-            <title>Мій профіль</title>
+            <title>Мій профіль - Енциклопедія Закарпаття</title>
             <div className="col-3 px-0">
                 <Sidebar page={"myprofile"} />
             </div>
             <div className="col-8 px-0">
                 <Header title="Мій профіль" />
                 <div className="container">
-                    <div className="page">
+                    <div className="page mt-3 mb-0">
                         <div className="profile-container">
                             <div className="avatar-container">
                                 <img className="rounded-circle" src={avatar} alt=""></img>

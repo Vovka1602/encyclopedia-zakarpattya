@@ -230,7 +230,7 @@ const EditLocationPage = () => {
 
     return (
         <div className='container'>
-            <title>Редагування локації</title>
+            <title>Редагування локації - Енциклопедія Закарпаття</title>
             {locationData && <EditLocationPreviewCard location={locationData} />}
             <h2 className="fs-4 fw-normal">Попередній перегляд інформаційної картки</h2>
             <form onSubmit={handleSubmit}>

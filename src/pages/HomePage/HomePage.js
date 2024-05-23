@@ -35,7 +35,7 @@ const HomePage = () => {
 
     return (
         <div className="row">
-            <title>Головна</title>
+            <title>Головна - Енциклопедія Закарпаття</title>
             <div className="col-3 px-0">
                 <Sidebar page={"home"} />
             </div>

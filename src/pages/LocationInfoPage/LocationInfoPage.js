@@ -55,7 +55,7 @@ const LocationInfoPage = () => {
 
     return (
         <div className="info-page px-4 me-0 ms-4">
-            <title>{title}</title>
+            <title>{title} - Енциклопедія Закарпаття</title>
             <h1 className="mt-4">{title}</h1>
             <div className="row mt-4">
                 <div className="col-8 px-5 mt-4">

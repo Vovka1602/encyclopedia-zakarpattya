@@ -68,7 +68,7 @@ const SignupPage = () => {
 
     return (
         <div className='container'>
-            <title>Реєстрація</title>
+            <title>Реєстрація - Енциклопедія Закарпаття</title>
             <form onSubmit={handleSubmit}>
                 <div className='card' data-bs-theme='dark'>
                     <div className='card-header'>

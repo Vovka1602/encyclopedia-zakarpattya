@@ -44,7 +44,7 @@ const ContributionsPage = () => {
 
     return (
         <div className="row">
-            <title>Внески</title>
+            <title>Внески - Енциклопедія Закарпаття</title>
             <div className="col-3 px-0">
                 <Sidebar page={"contributions"} />
             </div>
