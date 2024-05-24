@@ -80,7 +80,7 @@ const LoginPage = () => {
                 <span className="me-2">Не маєте акаунту?</span>
                 <span>
                     <a href="/signup">
-                        <button className="btn btn-outline-primary rounded-pill px-4 mb-1">Зареєструватися</button>
+                        <button className="btn btn-outline-primary px-4 mb-1">Зареєструватися</button>
                     </a>
                 </span>
             </div>

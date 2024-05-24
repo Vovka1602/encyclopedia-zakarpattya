@@ -97,7 +97,7 @@ const ModerationCard = ({ location }) => {
                         </div>
                         <div className="d-flex mt-2">
                             <h3 className="me-3 mt-2">Координати: {location.coordinates.lat}, {location.coordinates.lng}</h3>
-                            <button className="btn btn-outline-primary btn-lg rounded-pill px-4 ms-3" onClick={handleLocationClick}>Карта</button>
+                            <button className="btn btn-outline-primary btn-lg px-4 ms-3" onClick={handleLocationClick}>Карта</button>
                         </div>
                         <div className="card-content-elem">
                             <h3>Автор:</h3>

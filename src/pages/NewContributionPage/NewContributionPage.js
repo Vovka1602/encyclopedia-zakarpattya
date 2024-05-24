@@ -129,7 +129,7 @@ const NewContributionPage = () => {
                         <h2>Створити нову пропозицію</h2>
                     </div>
                     <div className='card-body'>
-                        <div className="image-settings">
+                        <div className="image-settings mb-2">
                             <label className="ms-3 mb-1">Додайте фото локації</label>
                             <input
                                 required
@@ -153,7 +153,7 @@ const NewContributionPage = () => {
                                     onChange={handleLongitudeChange}
                                     placeholder='Довгота'
                                 />
-                                <button className="btn btn-primary ms-3" type="button" onClick={handleLocationClick}>Показати карту</button>
+                                <button className="btn btn-outline-primary ms-3" type="button" onClick={handleLocationClick}>Показати карту</button>
                             </div>
                         </div>
                         <input
@@ -185,7 +185,9 @@ const NewContributionPage = () => {
                         />
                     </div>
                     <div className='card-footer'>
-                        <button className='btn btn-primary btn-lg px-5' type='submit'>Готово</button>
+                        <button className='btn btn-primary btn-lg px-5' type='submit'>
+                            <div className="btn-text">Готово</div>
+                        </button>
                     </div>
                 </div>
             </form>

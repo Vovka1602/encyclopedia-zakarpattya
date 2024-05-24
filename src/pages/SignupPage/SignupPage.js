@@ -106,14 +106,14 @@ const SignupPage = () => {
                             className='form-control'
                             value={id}
                             onChange={e => setId(e.target.value)}
-                            placeholder='Логін*'
+                            placeholder='Логін'
                         />
                         <input
                             required
                             className='form-control mt-3'
                             value={fullname}
                             onChange={e => setFullname(e.target.value)}
-                            placeholder="Повне ім'я*"
+                            placeholder="Повне ім'я"
                         />
                         <input
                             required
@@ -121,7 +121,7 @@ const SignupPage = () => {
                             value={password}
                             onChange={e => setPassword(e.target.value)}
                             type='password'
-                            placeholder='Пароль*'
+                            placeholder='Пароль'
                         />
                         <input
                             required
@@ -132,7 +132,9 @@ const SignupPage = () => {
                         />
                     </div>
                     <div className='card-footer'>
-                        <button className='btn btn-primary btn-lg px-5' type='submit'>Зареєструватися</button>
+                        <button className='btn btn-primary btn-lg px-5' type='submit'>
+                        <div className="btn-text">Зареєструватися</div>
+                        </button>
                     </div>
                 </div>
             </form>
@@ -140,7 +142,7 @@ const SignupPage = () => {
                 <span className='me-2'>Вже маєте акаунт? </span>
                 <span>
                     <a href='/login'>
-                        <button className='btn btn-outline-primary mb-1 px-4 rounded-pill'>Увійти</button>
+                        <button className='btn btn-outline-primary mb-1 px-4'>Увійти</button>
                     </a>
                 </span>
             </div>

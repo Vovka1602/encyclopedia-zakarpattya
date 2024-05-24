@@ -128,7 +128,7 @@ const NewLocationPage = () => {
                         <h2>Додати нову локацію</h2>
                     </div>
                     <div className='card-body'>
-                        <div className="image-settings">
+                        <div className="image-settings mb-2">
                             <label className="ms-3 mb-1">Додайте фото локації</label>
                             <input
                                 required
@@ -139,7 +139,7 @@ const NewLocationPage = () => {
                         </div>
                         <div className="image-settings">
                             <label className="ms-3 mb-1">Вкажіть координати місця</label>
-                            <div className="d-flex">
+                            <div className="d-flex mb-2">
                                 <input
                                     required
                                     className='form-control'
@@ -152,7 +152,7 @@ const NewLocationPage = () => {
                                     onChange={handleLongitudeChange}
                                     placeholder='Довгота'
                                 />
-                                <button className="btn btn-primary ms-3" type="button" onClick={handleLocationClick}>Показати карту</button>
+                                <button className="btn btn-outline-primary ms-3" type="button" onClick={handleLocationClick}>Показати карту</button>
                             </div>
                         </div>
                         <input
@@ -184,7 +184,9 @@ const NewLocationPage = () => {
                         />
                     </div>
                     <div className='card-footer'>
-                        <button className='btn btn-primary btn-lg px-5' type='submit'>Готово</button>
+                        <button className='btn btn-primary btn-lg px-5' type='submit'>
+                            <div className="btn-text">Готово</div>
+                        </button>
                     </div>
                 </div>
             </form>

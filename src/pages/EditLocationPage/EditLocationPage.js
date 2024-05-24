@@ -155,7 +155,7 @@ const EditLocationPage = () => {
             "comment": comment, 
         });
     }, [id, name, selectedImage, ticketPrice, descriptionShort, locationShort, latitude, longitude,
-        author, description, location, photos, usersLiked, comment
+        author, description, location, photos, usersLiked, comment, ticketPrices
     ]);
 
     useEffect(() => {
@@ -249,7 +249,7 @@ const EditLocationPage = () => {
                         </div>
                         <div className="image-settings">
                             <label className="ms-3 mb-1">Змінити координати місця</label>
-                            <div className="d-flex">
+                            <div className="d-flex mb-2">
                                 <input
                                     className='form-control'
                                     onChange={handleLatitudeChange}
@@ -260,7 +260,7 @@ const EditLocationPage = () => {
                                     onChange={handleLongitudeChange}
                                     placeholder='Довгота'
                                 />
-                                <button className="btn btn-primary ms-3" type="button" onClick={handleLocationClick}>Показати карту</button>
+                                <button className="btn btn-outline-primary ms-3" type="button" onClick={handleLocationClick}>Показати карту</button>
                             </div>
                         </div>
                         <input
@@ -288,7 +288,9 @@ const EditLocationPage = () => {
                         />
                     </div>
                     <div className='card-footer'>
-                        <button className='btn btn-primary btn-lg px-5' type='submit'>Готово</button>
+                        <button className='btn btn-primary btn-lg px-5' type='submit'>
+                            <div className="btn-text">Готово</div>
+                        </button>
                     </div>
                 </div>
             </form>

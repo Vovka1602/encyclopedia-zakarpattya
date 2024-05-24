@@ -101,16 +101,16 @@ const Sidebar = ({ page }) => {
                             </div>
                         ) : (<></>)}
                         <a href="/welcome">
-                            <button className="btn btn-outline-primary btn-lg rounded-pill px-3 py-3 fs-4 mt-4">Вийти</button>
+                            <button className="btn btn-outline-primary btn-lg px-3 py-3 fs-4 mt-4">Вийти</button>
                         </a>
                     </div>
                 ) : (
                     <div className="mt-4">
                         <a href="/login">
-                            <button className="btn btn-primary btn-lg rounded-pill px-5 py-3 fs-4">Увійти</button>
+                            <button className="btn btn-primary btn-lg px-5 py-3 fs-4">Увійти</button>
                         </a>
                         <a href="/signup">
-                            <button className="btn btn-outline-primary btn-lg rounded-pill px-3 py-3 fs-4 mt-3">Зареєструватися</button>
+                            <button className="btn btn-outline-primary btn-lg px-3 py-3 fs-4 mt-3">Зареєструватися</button>
                         </a>
                     </div>
                 )}

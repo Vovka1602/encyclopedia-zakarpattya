@@ -72,7 +72,7 @@ const ProfilePage = () => {
                             </div>
                             <div className="editprofile">
                                 <a href="/editprofile">
-                                    <button className="btn btn-outline-secondary rounded-pill px-5 fs-5">Редагувати профіль</button>
+                                    <button className="btn btn-outline-secondary px-5 fs-5">Редагувати профіль</button>
                                 </a>
                             </div>
                         </div>
