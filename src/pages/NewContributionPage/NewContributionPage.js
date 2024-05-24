@@ -140,7 +140,7 @@ const NewContributionPage = () => {
                         </div>
                         <div className="image-settings">
                             <label className="ms-3 mb-1">Вкажіть координати місця</label>
-                            <div className="d-flex">
+                            <div className="d-flex mb-2">
                                 <input
                                     required
                                     className='form-control'
