@@ -70,14 +70,16 @@ const ContributionCard = ({ location }) => {
                             )}
                         </div>
                         <div className="button-panel">
-                            <button className="button-gray" onClick={handleDeleteClick}>
-                                <div className="button-content">
-                                    <div className="button-icon">
-                                        <img src="./Images/Icons/trashbin_gray.png" alt=""></img>
-                                        <img className="img-hover" src="./Images/Icons/trashbin_black.png" alt=""></img>
+                            {(location.status !== "accepted") ? (
+                                <button className="button-gray" onClick={handleDeleteClick}>
+                                    <div className="button-content">
+                                        <div className="button-icon">
+                                            <img src="./Images/Icons/trashbin_gray.png" alt=""></img>
+                                            <img className="img-hover" src="./Images/Icons/trashbin_black.png" alt=""></img>
+                                        </div>
                                     </div>
-                                </div>
-                            </button>
+                                </button>
+                            ) : (<></>)}
                             <button className="button-blue" onClick={handleInfoClick}>
                                 <div className="button-content">
                                     <div className="button-icon">
@@ -90,7 +92,7 @@ const ContributionCard = ({ location }) => {
                         </div>
                     </div>
                     <InfoModal location={location} showModal={showInfoModal} handleClose={handleCloseInfoModal} />
-                    <GoogleMapsModal coordinates={{ "lat": location.coordinates.lat, "lng": location.coordinates.lng }} showModal={showGoogleMapsModal} handleClose={handleCloseGoogleMapsModal}/>
+                    <GoogleMapsModal coordinates={{ "lat": location.coordinates.lat, "lng": location.coordinates.lng }} showModal={showGoogleMapsModal} handleClose={handleCloseGoogleMapsModal} />
                 </div>
             ) : (<></>)}
         </div>

@@ -14,7 +14,15 @@
       "admin_access": false,
       "email": "user@gmail.com",
       "fullname": "Користувач",
-      "avatar": "./Images/Avatars/5.png"
+      "avatar": "./Images/Avatars/4.png"
+    },
+    {
+      "id": "user2",
+      "password": "1234",
+      "admin_access": false,
+      "email": "user2@gmail.com",
+      "fullname": "Користувач2",
+      "avatar": "data:image/png;base64,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"
     }
   ],
   "locations": [
@@ -23,8 +31,7 @@
       "name": "Ужгородський замок",
       "image": "https://tourinform.org.ua/wp-content/uploads/2017/12/big_1435.jpg",
       "users_liked": [
-        "admin",
-        "user"
+        "admin"
       ],
       "ticket_price": 20,
       "ticket_prices": [
@@ -65,9 +72,10 @@
       "name": "Замок 'Паланок'",
       "image": "https://s-vodogray.com.ua/wp-content/uploads/2021/03/Mukachevo-zamok-07-Int-1.jpg",
       "users_liked": [
-        "admin"
+        "admin",
+        "user"
       ],
-      "ticket_price": 50,
+      "ticket_price": 60,
       "ticket_prices": [
         {
           "for": "Дорослі",
@@ -105,7 +113,9 @@
       "id": "3a56",
       "name": "Невицький замок",
       "image": "https://glavcom.ua/img/article/5757/41_main-v1552088914.jpg",
-      "users_liked": [],
+      "users_liked": [
+        "user"
+      ],
       "ticket_price": 0,
       "ticket_prices": [],
       "location_short": "с. Невицьке",
@@ -144,6 +154,30 @@
       "author": "user",
       "status": "pending",
       "comment": ""
+    },
+    {
+      "id": "c5d9",
+      "name": "Замок Шенборнів",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlr7PkHCnvxPRkSOHL0Pj6hcgQ0G_vKpTnSnLZ3juODA&s",
+      "users_liked": [
+        "user"
+      ],
+      "ticket_price": 100,
+      "ticket_prices": [],
+      "location_short": "с. Карпати",
+      "location": "",
+      "description_short": "Розкішна оселя роду графів Шенборнів",
+      "description": "",
+      "photos": [
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlr7PkHCnvxPRkSOHL0Pj6hcgQ0G_vKpTnSnLZ3juODA&s"
+      ],
+      "coordinates": {
+        "lat": 48.52484,
+        "lng": 22.87447
+      },
+      "author": "user",
+      "status": "accepted",
+      "comment": "Дякуємо за Ваш внесок у розвиток сайту!"
     }
   ]
 }
